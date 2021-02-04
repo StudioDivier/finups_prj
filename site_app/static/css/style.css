@@ -1,0 +1,88 @@
+header {
+  background-color: #162a43;
+}
+header button:focus {
+  outline: none;
+}
+header a {
+  color: white;
+  font-size: 16px;
+}
+@media (max-width: 1200px) {
+  header a {
+    font-size: 14px;
+  }
+}
+header a:hover {
+  color: white;
+}
+header a:focus {
+  outline: none;
+}
+header .underscoreLink {
+  text-decoration: underline;
+}
+header .headerMenu {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+header .callbackBtn {
+  border: 1px solid #b36326;
+  border-radius: 5px;
+}
+
+footer p {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+footer a {
+  color: black;
+  font-size: 12px;
+}
+footer a:hover {
+  color: black;
+}
+footer a:focus {
+  outline: none;
+}
+footer .link-to-d {
+  text-decoration: underline;
+}
+
+.menu-line {
+  background-color: white;
+}
+.menu-line a {
+  color: black;
+  font-size: 15px;
+  font-weight: 500;
+}
+@media (max-width: 1200px) {
+  .menu-line a {
+    font-size: 14px;
+  }
+}
+.menu-line a:hover {
+  text-decoration: underline;
+}
+.menu-line a:focus {
+  outline: none;
+}
+.menu-line .line-menu-items {
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-left: 0;
+}
+
+@media (max-width: 992px) {
+  .menu-line {
+    display: none;
+  }
+}
+.banner {
+  background-color: black;
+  height: 300px;
+}

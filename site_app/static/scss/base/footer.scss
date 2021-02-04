@@ -1,0 +1,21 @@
+@import "../common/screen";
+
+footer{
+  p{
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+  a{
+    color: black;
+    font-size: 12px;
+  }
+  a:hover{
+    color: black;
+  }
+  a:focus{
+    outline: none            ;
+  }
+  .link-to-d{
+    text-decoration: underline;
+  }
+}

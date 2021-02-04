@@ -1,0 +1,38 @@
+@import "../common/screen";
+
+.menu-line {
+  background-color: white;
+
+  a {
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  @include max-w(1200){
+    a{
+      font-size: 14px;
+    }
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  a:focus {
+    outline: none;
+  }
+
+  .line-menu-items {
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 0;
+  }
+
+}
+@include max-w(992){
+  .menu-line{
+    display: none;
+  }
+}
