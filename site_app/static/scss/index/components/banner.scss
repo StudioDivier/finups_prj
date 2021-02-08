@@ -1,6 +1,192 @@
 @import "../../common/screen";
 
-.banner{
-  background-color: black;
-  height: 300px;
+.banner {
+
+  padding-top: $p1440;
+  padding-bottom: $p1440;
+  background-image: url("../img/main/banner-bg.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include max-w(576) {
+    padding-top: $p320;
+    padding-bottom: $p320;
+  }
+
+  .banner-title-row {
+    .banner-title {
+      h1 {
+        font-family: "Montserrat-Medium", sans-serif;
+        margin-bottom: 0;
+        color: #0b1a23;
+        font-size: 47px;
+        font-weight: 600;
+
+        span {
+          color: #cc6e27;
+        }
+      }
+      @include max-w(767) {
+        p {
+          font-size: 34px;
+        }
+      }
+      @include max-w(576) {
+        p {
+          font-size: 26px;
+        }
+      }
+      @include max-w(425) {
+        p {
+          font-size: 22px;
+        }
+      }
+      @include max-w(375) {
+        p {
+          font-size: 16px;
+        }
+      }
+
+    }
+  }
+
+  .banner-subtitle-row {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    @include max-w(576) {
+      margin-top: 20px;
+      margin-bottom: 15px;
+    }
+
+    .banner-subtitle {
+      p {
+        font-family: "Montserrat-SemiBold", sans-serif;
+        margin-bottom: 0;
+        font-size: 20px;
+        font-weight: 400;
+        @include max-w(576) {
+          font-size: 16px;
+        }
+        @include max-w(425) {
+          font-size: 14px;
+        }
+        @include max-w(375) {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+
+  .banner-mark-row {
+    .check-mark-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      @include max-w(767) {
+        flex-direction: column;
+      }
+
+      .check-mark {
+        display: flex;
+        flex-direction: row;
+        @include max-w(767) {
+          margin-bottom: 15px;
+        }
+
+        .check-mark-box {
+          border: 1px solid #0b1a23;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+
+          .check-mark-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+          }
+        }
+
+        .check-mark-text {
+          padding-left: 17px;
+          display: flex;
+          align-items: center;
+
+          p {
+            font-family: "Montserrat-Regular", sans-serif;
+            margin-bottom: 0;
+            font-size: 17px;
+            @include max-w(991) {
+              font-size: 15px;
+            }
+            @include max-w(375) {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .btn-row {
+    margin-top: 50px;
+    @include max-w(767) {
+      margin-top: 20px;
+    }
+
+    p {
+      font-family: "Montserrat-SemiBold", sans-serif;
+      margin-bottom: 0;
+      padding: 15px 25px;
+      color: white;
+      font-size: 16px;
+      text-align: center;
+      font-weight: 600;
+
+      @include max-w(767) {
+        font-size: 18px;
+        padding: 10px 20px;
+      }
+      @include max-w(425) {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+      @include max-w(375) {
+        font-size: 11px;
+        padding: 10px 20px;
+      }
+    }
+
+    a:hover{
+      color: white;
+    }
+    a:focus{
+      outline: none;
+    }
+
+    .btn-black {
+      background-color: #0b1a23;
+      border-radius: 5px;
+      @include max-w(767) {
+        margin: 0 25px;
+      }
+    }
+
+    .button-orange {
+      @include max-w(991) {
+        margin-top: 15px;
+      }
+      @include max-w(767) {
+        margin-top: 10px;
+      }
+
+      .btn-orange {
+        background-color: #b36326;
+        border-radius: 5px;
+        @include max-w(767) {
+          margin: 0 25px;
+        }
+      }
+    }
+  }
 }

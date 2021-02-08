@@ -1,0 +1,290 @@
+@import "../../common/screen";
+
+.calc {
+  background-color: #f4f7fa;
+  padding-top: $p1440;
+  padding-bottom: $p1440;
+  @include max-w(576) {
+    padding-top: $p320;
+    padding-bottom: $p320;
+  }
+
+  .calc-title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 55px;
+
+    h2 {
+      font-size: 36px;
+      font-family: "Montserrat-SemiBold", sans-serif;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 20px;
+      font-family: "Montserrat-Regular", sans-serif;
+      padding: 0px 210px;
+    }
+  }
+
+  .calc-calc {
+    .calc-subtitle {
+      display: flex;
+      font-family: "Montserrat-SemiBold", sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+
+      .col-lg-6:last-child {
+        padding-left: 0 !important;
+      }
+    }
+
+
+    form {
+      display: flex;
+      flex-direction: row;
+
+      .choice {
+        .calc-block {
+          background-color: white;
+          margin-bottom: 25px;
+          padding: 20px;
+          margin-right: 35px;
+
+          input {
+            width: 100%;
+          }
+
+          .input-title {
+            display: flex;
+            justify-content: space-between;
+
+            .input-text {
+              font-family: "Montserrat-Regular", sans-serif;
+              font-weight: 600;
+              font-size: 14px;
+            }
+
+            .input-subtext {
+              font-family: "Montserrat-Regular", sans-serif;
+              font-weight: 400;
+              font-size: 12px;
+            }
+          }
+        }
+
+        .calc-fz {
+
+          .row-calc {
+            display: flex;
+            flex-direction: row;
+            margin-right: 35px;
+
+            .change-point:first-child{
+              padding-left: 0!important;
+            }
+            .change-point:last-child{
+              padding-right: 0!important;
+            }
+
+            label {
+              margin-bottom: 0;
+            }
+
+            .calc-fz-area {
+              margin-bottom: 0;
+
+              input[type=radio] {
+                position: absolute;
+                opacity: 0;
+                pointer-events: none;
+                box-sizing: border-box;
+                padding: 0;
+              }
+
+              span {
+                position: relative;
+                padding-left: 35px;
+                cursor: pointer;
+                display: inline-block;
+                height: 25px;
+                line-height: 25px;
+                font-size: 14px;
+                transition: .28s ease;
+                user-select: none;
+                //@include adjustableText(12px, 14px, 15px, 18px);
+
+                &:before {
+                  border: 1px solid #465e6a;
+                  content: '';
+                  position: absolute;
+                  left: 0;
+                  top: -2px;
+                  margin: 4px;
+                  width: 19px;
+                  height: 19px;
+                  z-index: 0;
+                  transition: .28s ease;
+                  border-radius: 50%;
+                }
+
+                &:after {
+                  content: '';
+                  position: absolute;
+                  left: 0;
+                  top: -2px;
+                  margin: 4px;
+                  width: 19px;
+                  height: 19px;
+                  z-index: 0;
+                  transition: .28s ease;
+                  border-radius: 50%;
+                }
+              }
+
+              input[type="radio"]:disabled + span {
+                opacity: 0.3;
+              }
+
+              input[type=radio].with-gap:checked + span:after {
+                transform: scale(0.65);
+              }
+
+              input[type="radio"]:checked + span:after {
+                background-color: black;
+              }
+
+              input[type="radio"]:checked + span {
+                font-weight: 700;
+              }
+
+              input[type=radio]:checked + span:before {
+                border: 1px solid #465e6a;
+              }
+
+              input[type=radio]:checked + label {
+                border: 1px solid black;
+              }
+
+            }
+
+
+            .calc-fz-area {
+              background-color: white;
+              padding: 25px;
+              margin-right: 35px;
+                      width: 100%;
+
+              input {
+                display: none;
+              }
+
+
+            }
+
+          }
+
+          .row-calc:first-child {
+            margin-bottom: 20px;
+          }
+        }
+      }
+
+      .itog {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+
+        .calc-resul {
+          input {
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #6e8491;
+            font-family: "Montserrat-Regular", sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .calc-btn {
+    margin-top: 50px;
+
+    .calc-btn-left {
+      display: flex;
+      justify-content: flex-end;
+
+      a {
+        margin-right: 35px;
+      }
+    }
+
+    .calc-btn-right {
+      display: flex;
+      padding-left: 0 !important;
+    }
+
+    p {
+      font-family: "Montserrat-SemiBold", sans-serif;
+      margin-bottom: 0;
+      padding: 15px 25px;
+      color: white;
+      font-size: 15px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .btn-black {
+      background-color: #0b1a23;
+      border-radius: 5px;
+    }
+
+    .btn-orange {
+      background-color: #b36326;
+      border-radius: 5px;
+    }
+  }
+
+  .calc-description{
+    hr{
+      color: white;
+    }
+    .white-line{
+       border: 1px solid white;
+      margin-bottom: 30px;
+      margin-top: 30px;
+    }
+
+    .des-line{
+      display: flex;
+      flex-direction: row;
+
+      .des-line-img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+          //width: 100%;
+        }
+      }
+      .des-line-text{
+        padding-left: 40px;
+        p{
+          font-size: 16px;
+        }
+        p:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+@include max-w(768){
+    .calc{
+      display: none;
+    }
+  }

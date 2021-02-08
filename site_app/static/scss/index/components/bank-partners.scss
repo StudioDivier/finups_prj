@@ -1,0 +1,83 @@
+@import "../../common/screen";
+
+.bp {
+  padding-top: $p1440;
+  padding-bottom: $p1440;
+  @include max-w(576) {
+    padding-top: $p320;
+    padding-bottom: $p320;
+  }
+
+  .bp-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+
+    p {
+      font-size: 36px;
+      font-family: "Montserrat-SemiBold", serif;
+      font-weight: 400;
+    }
+
+    @include max-w(576) {
+      p {
+        font-size: 30px;
+      }
+    }
+  }
+
+  .bp-labels {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .label {
+      margin-bottom: 15px;
+
+      .label-elem {
+        border: 1px solid #e4e8ed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        padding: 5px;
+
+        img {
+
+        }
+
+      }
+    }
+  }
+
+  .pb-btn {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+
+    .btn-o-border {
+      border-radius: 5px;
+      border: 1px solid #b36326;
+
+      a:hover {
+        color: white;
+      }
+
+      a:focus {
+        outline: none;
+      }
+
+      .btn-orange__o-border {
+        p {
+          color: #b36326;
+          font-family: "Montserrat-Regular", serif;
+          font-weight: 500;
+          margin-bottom: 0;
+          padding: 15px 30px;
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,99 @@
+@import "../../common/screen";
+
+.form {
+  background-image: url("../img/main/form-bg.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: $p1440;
+  padding-bottom: $p1440;
+  @include max-w(576) {
+    padding-top: $p320;
+    padding-bottom: $p320;
+  }
+
+  .form-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    p {
+      margin-bottom: 0 !important;
+      color: white;
+    }
+
+    .form-title {
+      font-size: 36px;
+      font-family: "Montserrat-SemiBold", serif;
+      font-weight: 600;
+      @include max-w(768){
+        font-size: 35px;
+      }
+      @include max-w(576){
+        font-size: 26px;
+      }
+      @include max-w(375){
+        font-size: 22px;
+      }
+    }
+
+    .form-subtitle {
+      font-size: 20px;
+      font-family: "Montserrat-SemiBold", serif;
+      font-weight: 400;
+      @include max-w(768){
+        font-size: 16px;
+      }
+      @include max-w(576){
+        font-size: 12px;
+      }
+      @include max-w(375){
+        font-size: 10px;
+      }
+    }
+  }
+
+  form {
+    .form-input {
+      padding: 10px;
+
+      input {
+        color: white;
+        background-color: rgba(255, 255, 255, 0);
+        border: 1px solid #e5e9ed;
+        width: 100%;
+        padding: 15px;
+      }
+
+      input::placeholder {
+        color: #e5e9ed;
+      }
+
+      input:focus{
+        outline: none;
+      }
+    }
+
+    .form-btn {
+      padding: 10px;
+
+      button {
+        border-radius: 5px;
+        background-color: #b36326;
+        border: 1px solid #b36326;
+        padding: 7px;
+        color: white;
+        width: 100%;
+      }
+    }
+  }
+
+  .confirm{
+    p{
+      padding: 0 35px;
+      font-size: 11px;
+      color: #e5e9ed;
+    }
+  }
+}

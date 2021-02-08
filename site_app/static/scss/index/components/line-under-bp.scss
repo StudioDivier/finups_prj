@@ -1,0 +1,59 @@
+@import "../../common/screen";
+
+.line-under-bp {
+  background-color: #f4f7fa;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+
+  .line-elem {
+    display: flex;
+
+    .icon-elem {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .line-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 15px;
+
+      .line-title {
+        font-family: "Montserrat-SemiBold", sans-serif;
+        font-weight: 600;
+      }
+
+      .line-subtitle {
+        font-family: "Montserrat-Regular", sans-serif;
+      }
+
+      p {
+        margin-bottom: 0;
+        font-size: 18px;
+        @include max-w(576) {
+          font-size: 14px;
+        }
+        @include max-w(425) {
+          font-size: 12px;
+        }
+        @include max-w(375) {
+          font-size: 11px;
+        }
+      }
+
+    }
+  }
+
+  @include max-w(991) {
+    .two {
+      margin-top: 25px;
+    }
+  }
+}

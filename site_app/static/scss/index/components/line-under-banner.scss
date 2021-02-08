@@ -1,0 +1,54 @@
+@import "../../common/screen";
+
+.line-under-banner {
+  padding-top: $p1440;
+  padding-bottom: $p1440;
+  @include max-w(576) {
+    padding-top: $p320;
+    padding-bottom: $p320;
+  }
+
+  .line-elem {
+    display: flex;
+
+    .icon-elem {
+      img {
+        width: 100%;
+      }
+    }
+
+    .line-text {
+      padding-left: 15px;
+
+      .line-title {
+        font-family: "Montserrat-SemiBold", sans-serif;
+        font-weight: 600;
+      }
+
+      .line-subtitle {
+        font-family: "Montserrat-Regular", sans-serif;
+      }
+
+      p {
+        margin-bottom: 0;
+        font-size: 18px;
+        @include max-w(576){
+        font-size: 14px;
+      }
+        @include max-w(425){
+        font-size: 12px;
+      }
+        @include max-w(375){
+        font-size: 11px;
+      }
+      }
+
+    }
+  }
+
+  @include max-w(991) {
+    .two {
+      margin-top: 25px;
+    }
+  }
+}

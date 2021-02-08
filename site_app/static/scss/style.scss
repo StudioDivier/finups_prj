@@ -1,5 +1,63 @@
 @import "common/screen";
 
+// отступы блока
+// 1440
+$p1440: 85px;
+
+// 320 - 425
+$p320: 40px;
+
+.fade-opac {
+ animation-name: fade-opac;
+ animation-duration: 0.5s;
+ -webkit-animation-name: fade;
+ -webkit-animation-duration: 0.5s;
+}
+@keyframes fade-opac {
+ from {
+    opacity: 0.1;
+ }
+ to {
+   opacity: 1;
+ }
+}
+
+.hide-tab {
+  display: none;
+}
+
+.show-tab{
+  display: block;
+
+}
+
+
+// fonts
+@font-face {
+  font-family: "Montserrat-ExtraLight";
+  src: url("../font/Montserrat-ExtraLight.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-Italic";
+  src: url("../font/Montserrat-Italic.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("../font/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("../font/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-SemiBold";
+  src: url("../font/Montserrat-SemiBold.ttf");
+}
+
 // base
 @import "base/header";
 @import "base/footer";

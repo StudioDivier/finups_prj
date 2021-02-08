@@ -1,0 +1,210 @@
+@import "../../common/screen";
+
+.table {
+  padding-top: $p1440;
+  padding-bottom: $p1440;
+  @include max-w(576) {
+    padding-top: $p320;
+    padding-bottom: $p320;
+  }
+
+  .t_first {
+    .frame__qout {
+      border: 3px solid #e5e9ed;
+      padding: 50px 100px;
+      text-align: center;
+      @include max-w(768) {
+        padding: 20px 25px;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+
+      .qout {
+        font-size: 26px;
+        font-family: Montserrat-Regular, serif;
+        font-style: italic;
+        font-weight: 400;
+        @include max-w(991) {
+          font-size: 18px;
+        }
+        @include max-w(576) {
+          font-size: 14px;
+        }
+        @include max-w(375) {
+          font-size: 10px;
+        }
+      }
+
+
+      .quot_a {
+        font-size: 18px;
+        @include max-w(375) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .t_second {
+    margin-top: 50px;
+
+    .frame__table {
+      .t__slide {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        .checked {
+          background-color: #173141;
+          border: 2px solid #173141;
+          color: white;
+        }
+
+        .slide-elem {
+          border: 2px solid #6e8491;
+          text-align: center;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          padding: 10px 15px;
+
+          margin-bottom: 0 !important;
+          font-size: 16px;
+          font-weight: 400;
+          font-family: "Montserrat-SemiBold", serif;
+          @include max-w(576) {
+            font-size: 15px;
+          }
+          @include max-w(375) {
+            font-size: 12px;
+          }
+
+
+        }
+      }
+
+      .t__title {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        display: flex;
+        justify-content: center;
+        padding: 50px 0;
+        border-left: 1px solid #173141;
+        border-right: 1px solid #173141;
+        text-align: center;
+        @include max-w(576) {
+          padding: 35px 0;
+        }
+
+
+        p {
+          font-size: 36px;
+          font-family: "Montserrat-SemiBold", serif;
+          font-weight: 400;
+          @include max-w(576) {
+            font-size: 21px;
+          }
+          @include max-w(375) {
+            font-size: 16px;
+          }
+        }
+      }
+
+      .t__content {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        border-left: 1px solid #173141;
+        border-right: 1px solid #173141;
+
+
+        .t__content-element {
+          text-align: center;
+          @include max-w(991) {
+            padding-bottom: 25px;
+          }
+
+          .circle-div {
+            display: flex;
+            justify-content: center;
+
+            .t__elem-circl {
+              border-radius: 50%;
+              height: 100px;
+              width: 100px;
+              border: 2px solid #b36326;
+              display: flex;
+              justify-content: center;
+              text-align: center;
+              align-items: center;
+              @include max-w(375) {
+                height: 75px;
+                width: 75px;
+              }
+
+              .elem__num {
+                color: #b36326;
+                font-size: 42px;
+                font-family: "Montserrat-SemiBold", serif;
+                margin-bottom: 0 !important;
+                @include max-w(375) {
+                  font-size: 30px;
+                }
+              }
+            }
+          }
+
+          .t__elem-title {
+            padding-top: 30px;
+            @include max-w(375) {
+              padding-top: 20px;
+            }
+
+            p {
+              font-family: Montserrat, serif;
+              font-size: 24px;
+              font-weight: 400;
+            }
+          }
+
+          .t__elem-text {
+            font-size: 14px;
+            font-family: Montserrat, serif;
+          }
+        }
+      }
+
+      .t_btn {
+        display: flex;
+        justify-content: center;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        border-left: 1px solid #173141;
+        border-right: 1px solid #173141;
+        border-bottom: 1px solid #173141;
+
+        padding: 50px 0;
+
+        .btn-orange {
+          border-radius: 5px;
+          background-color: #b36326;
+
+          p {
+            padding: 15px 30px;
+            margin-bottom: 0 !important;
+            color: white;
+          }
+
+          a:hover {
+            color: white;
+          }
+
+          a:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}

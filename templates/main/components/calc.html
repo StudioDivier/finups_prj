@@ -1,0 +1,150 @@
+{% load static %}
+<section class="calc">
+    <div class="container">
+        <div class="row calc-title">
+            <h2>Просчитайте выгодные для вас условия</h2>
+            <p>Постоянно работая с ВБЦ Вы улучшаете Ваш рейтинг и уменьшаете
+                стоимость финансовых продуктов</p>
+        </div>
+        <div class="calc-calc">
+            <div class="calc-subtitle">
+                <div class="col-lg-6">
+                    <p>Заполните форму</p>
+                </div>
+                <div class="col-lg-6">
+                    <p>Результаты расчета</p>
+                </div>
+            </div>
+            <form action="">
+                <div class="col-lg-6 choice">
+                    <div class="calc-block calc-sum">
+                        <div class="input-title">
+                            <p class="input-text">Сумма гарантии</p>
+                            <p class="input-subtext">Максимальная сумма - 75 млн. рублей *</p>
+                        </div>
+                        <div class="calc-input">
+                            <p class="summa-value" id="summa-value">1</p>
+                            <input type="range" id="summa" name="summa" min="1" max="75" step="1" value="1"/>
+                        </div>
+                    </div>
+                    <div class="calc-block calc-sroc">
+                        <div class="input-title">
+                            <p class="input-text">Срок гарантии</p>
+                            <p class="input-subtext">Максимальный срок - 1825 дней</p>
+                        </div>
+                        <div class="calc-input">
+                            <p class="sroc-value" id="sroc-value">30</p>
+                            <input class="with-gap" type="range" id="sroc" name="sroc" min="30" max="1825" step="1"
+                                   value="30"/>
+                        </div>
+                    </div>
+                    <div class="calc-fz" id="calc-fz">
+                        <div class="row-calc">
+                            <div class="col-lg-6 change-point">
+                                <label class="calc-fz-area">
+                                    <input class="with-gap" type="radio" name="fz" id="fz-44" value="fz44" checked>
+                                    <span>223-ФЗ</span>
+                                </label>
+                            </div>
+                            <div class="col-lg-6 change-point">
+                                <label class=" calc-fz-area">
+                                    <input class="with-gap" type="radio" name="fz" id="fz-223" value="fz223">
+
+                                    <span>223-ФЗ</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row-calc">
+                            <div class="col-lg-6 change-point">
+                                <label class=" calc-fz-area">
+                                    <input class="with-gap" type="radio" name="fz" id="fz-44-1" value="fz44-1">
+
+                                    <span>44-ФЗ</span>
+                                </label>
+                            </div>
+                            <div class="col-lg-6 change-point">
+                                <label class=" calc-fz-area">
+                                    <input class="with-gap" type="radio" name="fz" id="fz-223-1" value="fz223-1">
+
+                                    <span>223-ФЗ</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 itog">
+                    <div class="calc-resul">
+                        <p><input type="submit" value="Рассчитать"></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row calc-btn">
+            <div class="col-md-6 calc-btn-left">
+
+                <a href="">
+                    <div class="btn-black">
+                        <p>Заказать консультацию</p>
+                    </div>
+                </a>
+
+            </div>
+            <div class="col-md-6 calc-btn-right">
+
+                <a href="">
+                    <div class="btn-orange">
+                        <p>Получить гарантию</p>
+                    </div>
+                </a>
+
+
+            </div>
+        </div>
+        <div class="calc-description">
+
+            <div class="white-line"></div>
+
+            <div class="des-line">
+                <div class="col-lg-2 col-md-4 des-line-img">
+                    <img src="{% static "img/main/tringle.png" %}" alt="tringle-description">
+                </div>
+                <div class="col-lg-8 col-md-8 des-line-text">
+                    <p>*Заявки на сумму свыше 75 млн. рублей рассматриваются в индивидуальном порядке.</p>
+                    <p>Приведенные расчеты стоимости банковской гарантии предварительные и не являются публичной
+                        офертой.</p>
+                </div>
+                <div class="col-lg-2 clear"></div>
+            </div>
+
+            <div class="white-line"></div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("summa").addEventListener("input", function () {
+            let el = document.getElementById('summa-value');
+            el.innerText = this.value;
+            console.log(this.value);
+        });
+        document.getElementById("sroc").addEventListener("input", function () {
+            let el = document.getElementById('sroc-value');
+            el.innerText = this.value;
+            console.log(this.value);
+        });
+        document.getElementById("calc-fz").addEventListener("input", function () {
+                document.getElementById("fz-223-1").addEventListener("change", evt => {
+                    if (bold) {
+                        document.getElementById("fz-223-1").style.border = "1px solid black"
+
+                    }
+                })
+            }
+        )
+    });
+
+
+</script>
