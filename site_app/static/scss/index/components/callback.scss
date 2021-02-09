@@ -1,0 +1,115 @@
+@import "../../common/screen";
+@import "../../common/colors";
+
+.callback-section {
+  .grey-line {
+    border: 1px solid $back_grey;
+  }
+
+  .cs-content {
+    padding: 40px 0;
+
+
+    .left {
+      display: flex;
+      justify-content: flex-start;
+      @include max-w(576) {
+        justify-content: center;
+      }
+
+      .down-logo {
+        @include max-w(768){
+          display: flex;
+        align-items: center;
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      justify-content: flex-end;
+
+      @include max-w(768) {
+        justify-content: center;
+      }
+      @include max-w(575){
+        padding-top: 35px;
+      }
+
+      .down-text {
+        display: flex;
+        align-items: center;
+        @include max-w(992){
+          width: 100%;
+          justify-content: space-between;
+        }
+        @include max-w(768){
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
+        }
+        @include max-w(576) {
+          flex-direction: column;
+          justify-content: center;
+                  text-align: center;
+        }
+
+        a {
+          color: $dblue;
+          font-size: 16px;
+          padding-right: 70px;
+          @include max-w(992){
+            padding-right: 0;
+          }
+          @include max-w(768){
+            display: none;
+          }
+        }
+
+        a:hover {
+          color: $dblue;
+          text-decoration: none;
+        }
+
+        a:focus {
+          outline: none;
+        }
+
+
+        a:hover {
+          color: $gold;
+        }
+
+        a:focus {
+          outline: none;
+        }
+
+        .btn-orange__o-border {
+          border-radius: 5px;
+          border: 1px solid $gold;
+
+          p {
+            color: $dblue;
+            font-size: 13px;
+            font-family: "Montserrat-Regular", serif;
+            font-weight: 500;
+            margin-bottom: 0;
+            padding: 15px 30px;
+          }
+        }
+
+        p:hover {
+          color: $gold;
+        }
+
+        .btn-orange__o-border:focus {
+          outline: none;
+        }
+
+      }
+    }
+  }
+}

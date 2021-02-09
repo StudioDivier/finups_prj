@@ -2,21 +2,175 @@
 
 <section class="qa__frame">
     <div class="container">
-        <div class="accordion__qa">
-            <div class="row qa__slide info-header">
-                    <div class="col-lg-3 qa_slide-elem info-header-tab checked">
-                        Как получить Банковскую Гарантию?
+        <div class="qa-title">
+            <h2>Вопросы и ответы</h2>
+        </div>
+        <div class="accardion">
+            <div class="acc__body acc-header">
+                <div class="acc__card">
+                    <div class="acc__title acc-header-tab checked a-up">
+                        Личный кабинет на Finaps?
+
                     </div>
-                    <div class="col-lg-3 qa_slide-elem info-header-tab">
-                        Какие документы?
-                    </div>
-                    <div class="col-lg-3 qa_slide-elem info-header-tab">
-                        Доп. условия
-                    </div>
-                    <div class="col-lg-3 qa_slide-elem info-header-tab">
-                        Подробнее о Банковской Гарантии
+                    <div class="acc-tabcontent fade-opac show-tab">
+                        <div class="acc-text">
+                            <p>Достаточно лишь зарегистрироваться указав ваши ФИО, e-mail, телефон и ИНН. При этом для
+                                полноценной
+                                работы вам потребуется Квалифицированная Электронная Подпись</p>
+                            <a href="">Как получить?</a>
+                        </div>
                     </div>
                 </div>
+
+                <div class="white-line"></div>
+
+                <div class="acc__card">
+                    <div class="acc__title acc-header-tab checked a-down">
+                        Как получить продукт?
+
+                    </div>
+                    <div class="acc-tabcontent fade-opac hide-tab">
+                        <div class="acc-text">
+                            <p>Достаточно лишь зарегистрироваться указав ваши ФИО, e-mail, телефон и ИНН. При этом для
+                                полноценной
+                                работы вам потребуется Квалифицированная Электронная Подпись</p>
+                            <a href="">Как получить?</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="white-line"></div>
+
+                <div class="acc__card">
+                    <div class="acc__title acc-header-tab checked a-down">
+                        Не работает ЭП или технические проблемы со входом?
+
+                    </div>
+                    <div class="acc-tabcontent fade-opac hide-tab">
+                        <div class="acc-text">
+                            <p>Достаточно лишь зарегистрироваться указав ваши ФИО, e-mail, телефон и ИНН. При этом для
+                                полноценной
+                                работы вам потребуется Квалифицированная Электронная Подпись</p>
+                            <a href="">Как получить?</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="white-line"></div>
+
+                <div class="acc__card">
+                    <div class="acc__title acc-header-tab checked a-down">
+                        Finaps - это посредник?
+
+                    </div>
+                    <div class="acc-tabcontent fade-opac hide-tab">
+                        <div class="acc-text">
+                            <p>Достаточно лишь зарегистрироваться указав ваши ФИО, e-mail, телефон и ИНН. При этом для
+                                полноценной
+                                работы вам потребуется Квалифицированная Электронная Подпись</p>
+                            <a href="">Как получить?</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="white-line"></div>
+
+                <div class="acc__card">
+                    <div class="acc__title acc-header-tab checked a-down">
+                        Кто такие официальные представители?
+
+                    </div>
+                    <div class="acc-tabcontent fade-opac hide-tab">
+                        <div class="acc-text">
+                            <p>Достаточно лишь зарегистрироваться указав ваши ФИО, e-mail, телефон и ИНН. При этом для
+                                полноценной
+                                работы вам потребуется Квалифицированная Электронная Подпись</p>
+                            <a href="">Как получить?</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="white-line"></div>
+
+                <div class="acc__card">
+                    <div class="acc__title acc-header-tab checked a-down">
+                        Сколько действует Банковская Гарантия?
+
+                    </div>
+                    <div class="acc-tabcontent fade-opac hide-tab">
+                        <div class="acc-text">
+                            <p>Достаточно лишь зарегистрироваться указав ваши ФИО, e-mail, телефон и ИНН. При этом для
+                                полноценной
+                                работы вам потребуется Квалифицированная Электронная Подпись</p>
+                            <a href="">Как получить?</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="white-line"></div>
+
+                <div class="acc__card">
+                    <div class="acc__title acc-header-tab checked a-down">
+                        Что такое Банковская Гарантия?
+
+                    </div>
+                    <div class="acc-tabcontent fade-opac hide-tab">
+                        <div class="acc-text">
+                            <p>Достаточно лишь зарегистрироваться указав ваши ФИО, e-mail, телефон и ИНН. При этом для
+                                полноценной
+                                работы вам потребуется Квалифицированная Электронная Подпись</p>
+                            <a href="">Как получить?</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="white-line"></div>
+
+            </div>
         </div>
     </div>
 </section>
+
+<script>
+    const tab1 = document.querySelectorAll('.acc-header-tab');
+    const info1 = document.querySelector('.acc-header');
+    const tabContent1 = document.querySelectorAll('.acc-tabcontent');
+
+    function hideTabContent1(a) {
+        for (let i = a; i < tabContent1.length; i++) {
+            tabContent1[i].classList.remove('show-tab');
+            tabContent1[i].classList.add('hide-tab');
+
+            tab1[i].classList.remove('a-up');
+            tab1[i].classList.add('a-down');
+
+            console.log(tabContent1)
+        }
+    }
+
+    hideTabContent1(1);
+
+    function showTabContent1(b) {
+        if (tabContent1[b].classList.contains('hide-tab')) {
+            tabContent1[b].classList.remove('hide-tab');
+            tabContent1[b].classList.add('show-tab');
+
+            tab1[b].classList.add('a-up');
+            tab1[b].classList.remove('a-down');
+        }
+    }
+
+    info1.addEventListener('click', function (event) {
+        let target = event.target;
+        if (target && target.classList.contains('acc-header-tab')) {
+            for (let i = 0; i < tab1.length; i++) {
+                if (target == tab1[i]) {
+                    hideTabContent1(0);
+                    showTabContent1(i);
+                    break;
+                }
+            }
+        }
+    });
+
+</script>

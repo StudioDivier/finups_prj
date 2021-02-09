@@ -1,4 +1,5 @@
 @import "../../common/screen";
+@import "../../common/colors";
 
 .bp {
   padding-top: $p1440;
@@ -35,7 +36,7 @@
       margin-bottom: 15px;
 
       .label-elem {
-        border: 1px solid #e4e8ed;
+        border: 1px solid $back_grey;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -58,7 +59,7 @@
 
     .btn-o-border {
       border-radius: 5px;
-      border: 1px solid #b36326;
+      border: 1px solid $gold;
 
       a:hover {
         color: white;
@@ -70,7 +71,7 @@
 
       .btn-orange__o-border {
         p {
-          color: #b36326;
+          color: $gold;
           font-family: "Montserrat-Regular", serif;
           font-weight: 500;
           margin-bottom: 0;

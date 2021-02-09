@@ -1,7 +1,129 @@
 @import "../../common/screen";
+@import "../../common/colors";
 
-.qa__frame{
-  .accordion__qa{
+.qa__frame {
+  padding-top: $p1440;
+  padding-bottom: $p1440;
+  @include max-w(576) {
+    padding-top: $p320;
+    padding-bottom: $p320;
+  }
 
+  background-image: url("../img/main/octagones.png");
+  background-position: left top;
+  background-repeat: no-repeat;
+
+  background-size: auto;
+  background-origin: content-box;
+  background-position-x: 60px;
+
+  .qa-title {
+    text-align: center;
+    padding-bottom: 50px;
+
+    h2 {
+      font-size: 36px;
+      @include max-w(768) {
+        font-size: 30px;
+      }
+      @include max-w(576) {
+        font-size: 27px;
+      }
+      @include max-w(425) {
+        font-size: 25px;
+      }
+      @include max-w(375) {
+        font-size: 20px;
+      }
+    }
+
+  }
+
+  .accardion {
+    .white-line {
+      border: 1px solid $back_grey;
+      margin-bottom: 30px;
+      margin-top: 30px;
+    }
+
+    .acc__card {
+      .a-up {
+        background-image: url("../img/main/arrow-up.png");
+        background-repeat: no-repeat;
+        background-position: center right;
+        background-size: contain;
+      }
+
+      .a-down {
+        background-image: url("../img/main/arrow-down.png");
+        background-repeat: no-repeat;
+        background-position: center right;
+        background-size: contain;
+      }
+
+      .acc__title {
+        font-size: 24px;
+        color: $dblue;
+        font-weight: 500;
+        font-family: Montserrat-Medium, serif;
+        @include max-w(992) {
+          font-size: 20px;
+        }
+        @include max-w(768) {
+          font-size: 16px;
+        }
+        @include max-w(576) {
+          font-size: 11px;
+          font-weight: 600;
+        }
+        @include max-w(375) {
+          font-size: 9px;
+          font-weight: 600;
+        }
+
+
+      }
+
+      .acc-text {
+        p {
+          font-family: Montserrat-Regular, serif;
+          font-size: 16px;
+          color: $dblue;
+          padding-top: 20px;
+          @include max-w(768) {
+            font-size: 13px;
+          }
+          @include max-w(576) {
+            font-size: 10px;
+          }
+          @include max-w(375) {
+            font-size: 8px;
+          }
+        }
+
+        a {
+          color: $gold;
+          font-size: 16px;
+          @include max-w(768) {
+            font-size: 14px;
+          }
+          @include max-w(576) {
+            font-size: 12px;
+          }
+          @include max-w(375) {
+            font-size: 10px;
+          }
+        }
+
+        a:hover {
+          color: $gold;
+          text-decoration: underline;
+        }
+
+        a:focus {
+          outline: none;
+        }
+      }
+    }
   }
 }

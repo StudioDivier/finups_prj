@@ -1,0 +1,77 @@
+@import "../../common/screen";
+@import "../../common/colors";
+
+.useful-line {
+  background-color: $back_grey;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .useful-title{
+    text-align: center;
+    padding-bottom: 50px;
+        h2 {
+      font-size: 36px;
+      @include max-w(768) {
+        font-size: 30px;
+      }
+      @include max-w(576) {
+        font-size: 27px;
+      }
+      @include max-w(425) {
+        font-size: 25px;
+      }
+      @include max-w(375) {
+        font-size: 20px;
+      }
+    }
+  }
+
+
+  .line-elem {
+    display: flex;
+
+    .icon-elem {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .line-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 15px;
+
+      .line-title {
+        font-family: "Montserrat-Medium", sans-serif;
+        font-weight: 400;
+      }
+
+      p {
+        margin-bottom: 0;
+        font-size: 17px;
+        text-decoration: underline;
+        @include max-w(576) {
+          font-size: 14px;
+        }
+        @include max-w(425) {
+          font-size: 12px;
+        }
+        @include max-w(375) {
+          font-size: 11px;
+        }
+      }
+
+    }
+  }
+
+  @include max-w(991) {
+    .two {
+      margin-top: 25px;
+    }
+  }
+}
