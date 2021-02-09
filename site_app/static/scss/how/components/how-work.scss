@@ -1,0 +1,46 @@
+@import "../../common/screen";
+@import "../../common/colors";
+
+.hw-line{
+  padding-top: $p1440;
+  padding-bottom: $p1440;
+  @include max-w(576) {
+    padding-top: $p320;
+    padding-bottom: $p320;
+  }
+  .hw-line__text{
+    text-align: center;
+    p{
+      color: $dblue;
+    }
+
+    .text-title{
+      font-size: 36px;
+      font-family: "Montserrat-SemiBold", serif;
+      font-weight: 400;
+      @include max-w(768) {
+        font-size: 30px;
+      }
+      @include max-w(576) {
+        font-size: 27px;
+      }
+      @include max-w(425) {
+        font-size: 25px;
+      }
+      @include max-w(375) {
+        font-size: 19px;
+      }
+    }
+    .text{
+      font-size: 18px;
+          font-family: "Montserrat-Medium", serif;
+          font-weight: 400;
+          @include max-w(768) {
+            font-size: 17px;
+          }
+          @include max-w(576) {
+            font-size: 14px;
+          }
+    }
+  }
+}

@@ -1,0 +1,156 @@
+@import "../../common/screen";
+@import "../../common/colors";
+
+.hw-steps {
+  padding-top: $p1440;
+  padding-bottom: $p1440;
+  @include max-w(576) {
+    padding-top: $p320;
+    padding-bottom: $p320;
+  }
+  background-color: $back_grey;
+
+  .hw-line__text {
+    text-align: center;
+
+    .text-title {
+      font-size: 36px;
+      font-family: "Montserrat-SemiBold", serif;
+      font-weight: 400;
+      @include max-w(768) {
+        font-size: 30px;
+      }
+      @include max-w(576) {
+        font-size: 27px;
+      }
+      @include max-w(425) {
+        font-size: 25px;
+      }
+      @include max-w(375) {
+        font-size: 19px;
+      }
+    }
+  }
+
+  .steps-line {
+    .one{
+      padding: 40px 0;
+    }
+    .elem {
+      .step-elem {
+
+        .nechet{
+          color: $dblue;
+        }
+
+        .chet{
+          color: $gold;
+        }
+
+        .middle{
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          .pre-point-img{
+            display: flex;
+            align-items: center;
+            img {
+              width: 100%;
+            }
+            @include max-w(991){
+              display: none;
+            }
+          }
+        }
+
+        .last{
+          display: flex;
+          justify-content: flex-start!important;
+          text-align: center;
+          .pre-point-img{
+            display: flex;
+            align-items: center;
+            img {
+              width: 100%;
+            }
+            @include max-w(991){
+              display: none;
+            }
+          }
+        }
+
+        .img-step {
+          display: flex;
+          justify-content: flex-end;
+          text-align: center;
+          @include max-w(991){
+            justify-content: center;
+          }
+
+
+          .circle-img {
+            width: 110px;
+            height: 110px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            @include max-w(1199){
+              margin: 10px;
+              width: 65px;
+              height: 65px;
+            }
+            @include max-w(991){
+              width: 80px;
+              height: 80px;
+            }
+
+            p {
+              font-size: 44px;
+              margin-bottom: 0;
+              font-weight: 500;
+              font-family: Montserrat-Medium, serif;
+              @include max-w(1199){
+                font-size: 30px;
+              }
+              @include max-w(991){
+                font-size: 35px;
+              }
+            }
+          }
+
+
+
+          .post-point-img {
+            display: flex;
+            align-items: center;
+
+            img {
+              width: 100%;
+            }
+            @include max-w(991){
+              display: none;
+            }
+          }
+
+
+        }
+
+        .text-img {
+          text-align: center;
+          p {
+            font-size: 18px;
+            font-family: Montserrat-Medium, serif;
+            font-weight: 500;
+            @include max-w(1199){
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
