@@ -35,6 +35,9 @@
   .steps-line {
     .one{
       padding: 40px 0;
+      @include max-w(991){
+        padding: 0;
+      }
     }
     .elem {
       .step-elem {
@@ -67,6 +70,9 @@
           display: flex;
           justify-content: flex-start!important;
           text-align: center;
+          @include max-w(991){
+            justify-content: center!important;
+          }
           .pre-point-img{
             display: flex;
             align-items: center;

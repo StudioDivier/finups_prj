@@ -1,0 +1,44 @@
+@import "../../common/screen";
+@import "../../common/colors";
+
+.header-entrance{
+  margin: 40px 40px 20px 40px;
+
+
+  .head-block {
+    padding: 40px 0;
+    display: flex;
+    @include max-w(450){
+      display: flex;
+      flex-direction: column;
+    }
+
+    .head-logo {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 10px;
+      img{
+        width: 100%;
+      }
+    }
+
+    .head-text {
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+      padding-left: 10px;
+      @include max-w(450){
+        padding-top: 15px;
+        padding-left: 0;
+      }
+      p {
+        color: #c5d5e8;;
+        margin-bottom: 0;
+        font-size: 11px;
+        @include max-w(450){
+          text-align: center;
+        }
+      }
+    }
+  }
+}

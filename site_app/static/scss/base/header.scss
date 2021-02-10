@@ -1,7 +1,8 @@
 @import "../common/screen";
+@import "../common/colors";
 
 header {
-  background-color: #162a43;
+  background-color: $dblue;
   button:focus{
     outline: none;
   }
@@ -30,12 +31,5 @@ header {
     display: flex;
     justify-content: space-around;
   }
-
-  .callbackBtn {
-    border: 1px solid #b36326;
-    border-radius: 5px;
-  }
-
-
 
 }

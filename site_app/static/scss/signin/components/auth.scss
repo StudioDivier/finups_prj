@@ -1,0 +1,76 @@
+@import "../../common/screen";
+@import "../../common/colors";
+
+.inline-choice{
+  margin: 0 40px;
+  padding-bottom: 20px;
+  .inline-block{
+    padding: 0 40px;
+    display: flex;
+
+    .vertical-line{
+      border-left: 1px solid $back_grey;
+    }
+
+    .signin{
+      a{
+        color: $back_grey;
+        padding-right: 20px;
+        font-size: 24px;
+        font-family: "Montserrat-ExtraLight", serif;
+        font-weight: 400;
+        @include max-w(575){
+          font-size: 18px;
+        }
+@include max-w(425){
+          font-size: 14px;
+        }
+      }
+    }
+    .signin-active{
+      a{
+        color: white;
+        padding-right: 20px;
+        font-size: 24px;
+        font-family: Montserrat, serif;
+        font-weight: 500;
+        @include max-w(575){
+          font-size: 18px;
+        }
+        @include max-w(425){
+          font-size: 14px;
+        }
+      }
+    }
+    .login{
+      a{
+        color: $back_grey;
+        padding-left: 20px;
+        font-size: 24px;
+        font-family: "Montserrat-ExtraLight", serif;
+        font-weight: 400;
+        @include max-w(575){
+          font-size: 18px;
+        }
+        @include max-w(425){
+          font-size: 14px;
+        }
+      }
+    }
+    .login-active{
+      a{
+        color: white;
+        padding-left: 20px;
+        font-size: 24px;
+        font-family: "Montserrat-Medium", serif;
+        font-weight: 500;
+        @include max-w(575){
+          font-size: 18px;
+        }
+        @include max-w(425){
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

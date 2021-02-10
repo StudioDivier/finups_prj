@@ -1,0 +1,59 @@
+@import "../common/screen";
+@import "../common/colors";
+
+.modal-header {
+  border: none;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 40px;
+
+  p {
+    font-size: 34px;
+    font-family: Montserrat-Medium, serif;
+    font-weight: 600;
+    margin-bottom: 30px;
+    @include max-w(375){
+      font-size: 25px;
+    }
+
+    span {
+      font-size: 26px;
+      font-weight: 400;
+      @include max-w(375){
+        font-size: 20px;
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    margin: 0 20px;
+    @include max-w(375){
+      padding: 0 20px;
+      margin: 0;
+    }
+
+    input {
+      border-radius: 5px;
+      border: 2px solid $back_grey;
+      color: $dblue;
+      padding: 10px 20px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: $gold;
+      border-radius: 5px;
+      border: 1px solid $gold;
+      color: white;
+      padding: 10px 0;
+    }
+  }
+}

@@ -1,0 +1,120 @@
+@import "../../common/screen";
+@import "../../common/colors";
+
+.serv-list {
+  padding-top: $p1440;
+  padding-bottom: $p1440;
+  @include max-w(576) {
+    padding-top: $p320;
+    padding-bottom: $p320;
+  }
+  background-color: $back_grey;
+
+  .hw-line__text {
+    text-align: center;
+
+    .text-title {
+      font-size: 36px;
+      font-family: "Montserrat-SemiBold", serif;
+      font-weight: 400;
+      @include max-w(768) {
+        font-size: 30px;
+      }
+      @include max-w(576) {
+        font-size: 27px;
+      }
+      @include max-w(425) {
+        font-size: 25px;
+      }
+      @include max-w(375) {
+        font-size: 19px;
+      }
+    }
+  }
+
+  .elem-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    .elem {
+      padding: 10px;
+
+      .serv-card {
+        background-color: white;
+        padding: 30px;
+        height: 100%;
+        display: flex;
+        @include max-w(576){
+          flex-direction: column;
+        }
+        .up-card {
+          display: flex;
+          flex-direction: column;
+
+          .elem-text {
+            .elem-title {
+              font-size: 22px;
+              font-family: "Montserrat-SemiBold", serif;
+              @include max-w(768) {
+                font-size: 20px;
+              }
+              @include max-w(576) {
+                font-size: 15px;
+              }
+            }
+
+            .elem-percent {
+              font-size: 15px;
+              font-family: "Montserrat-ExtraLight", serif;
+              font-weight: 600;
+                      padding-top: 15px;
+              @include max-w(768) {
+                font-size: 15px;
+              }
+              @include max-w(576) {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+
+        .down-card {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          @include max-w(576){
+            justify-content: space-around;
+            flex-direction: row;
+          }
+
+          .elem-img {
+            display: flex;
+            align-items: center;
+            padding-right: 0!important;
+            @include max-w(576) {
+              width: 30%;
+            }
+
+            img {
+              width: 100%;
+            }
+            @include max-w(576){
+              display: none;
+            }
+          }
+
+          .more-btn {
+            margin-top: 25px;
+            border: 1px solid $dblue;
+            border-radius: 5px;
+
+            p {
+              margin-bottom: 0;
+              padding: 10px 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

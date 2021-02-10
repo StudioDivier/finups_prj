@@ -38,6 +38,9 @@
 
   .why-cols {
     .elem {
+      @include max-w(991){
+        margin-top: 25px;
+      }
       .elem-card {
         height: 100%;
         border: 1px solid #afb7be;
@@ -59,10 +62,7 @@
             font-family: "Montserrat-SemiBold", serif;
             font-weight: 400;
             @include max-w(768) {
-              font-size: 15px;
-            }
-            @include max-w(576) {
-              font-size: 14px;
+              font-size: 16px;
             }
           }
 
@@ -76,10 +76,15 @@
         .card-down {
           padding-top: 15px;
           ul {
+            list-style-image: url('../img/ul-point.png');
+            padding-left: 20px!important;
             li {
               font-size: 16px;
               font-family: "Montserrat-Regular", serif;
               font-weight: 400;
+              @include max-w(768){
+                font-size: 14px;
+              }
             }
           }
         }

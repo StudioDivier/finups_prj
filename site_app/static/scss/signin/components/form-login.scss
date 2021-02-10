@@ -1,0 +1,81 @@
+@import "../../common/screen";
+@import "../../common/colors";
+
+.form-login{
+  .sign{
+    align-items: center;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+
+    .sign-form{
+        width: 40%;
+      padding: 10px 10px 10px 20px;
+      //@include max-w(991){
+      //  width: 85%;
+      //}
+      @include max-w(768){
+        width: 65%;
+      }
+    }
+
+    input{
+      background-color: rgba(255,255,255,0);
+      border-radius: 5px;
+      border: 1px solid $back_grey;
+      padding: 10px 170px 10px 20px;
+      margin-bottom: 15px;
+      @include max-w(425){
+          padding: 10px 50px 10px 20px;
+        }
+    }
+    input::placeholder{
+      color: $back_grey;
+    }
+    input:hover{
+      outline: none;
+    }
+
+    .forgot-link{
+      display: flex;
+      justify-content: flex-end;
+      a{
+        margin-bottom: 0;
+        padding-bottom: 10px;
+        color: $back_grey;
+        text-decoration: underline;
+      }
+    }
+    button{
+      border-radius: 5px;
+      border: 1px solid $gold;
+      background-color: $gold;
+      color: white;
+      padding: 10px 100px;
+
+    }
+    .sign-form-button{
+      padding: 10px 140px;
+    }
+
+    .signin-descr{
+      padding-top: 10px;
+      p{
+        color: $back_grey;
+        font-size: 13px;
+
+        @include max-w(425){
+          font-size: 9px;
+        }
+        a{
+          color: $gold;
+        }
+        a:hover{
+          color: $gold;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

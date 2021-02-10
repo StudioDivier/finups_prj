@@ -1,4 +1,5 @@
 @import "../../common/screen";
+@import "../../common/colors";
 
 .banner {
 
@@ -18,31 +19,31 @@
       h1 {
         font-family: "Montserrat-Medium", sans-serif;
         margin-bottom: 0;
-        color: #0b1a23;
+        color: $dblue;
         font-size: 47px;
         font-weight: 600;
 
         span {
-          color: #cc6e27;
+          color: $gold;
         }
       }
       @include max-w(767) {
-        p {
+        h1 {
           font-size: 34px;
         }
       }
       @include max-w(576) {
-        p {
+        h1 {
           font-size: 26px;
         }
       }
       @include max-w(425) {
-        p {
+        h1 {
           font-size: 22px;
         }
       }
       @include max-w(375) {
-        p {
+        h1 {
           font-size: 16px;
         }
       }
@@ -94,7 +95,7 @@
         }
 
         .check-mark-box {
-          border: 1px solid #0b1a23;
+          border: 1px solid $dblue;
           width: 40px;
           height: 40px;
           border-radius: 50%;
@@ -165,7 +166,7 @@
     }
 
     .btn-black {
-      background-color: #0b1a23;
+      background-color: $dblue;
       border-radius: 5px;
       @include max-w(767) {
         margin: 0 25px;
@@ -181,7 +182,7 @@
       }
 
       .btn-orange {
-        background-color: #b36326;
+        background-color: $gold;
         border-radius: 5px;
         @include max-w(767) {
           margin: 0 25px;

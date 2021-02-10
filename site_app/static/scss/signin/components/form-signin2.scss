@@ -1,0 +1,48 @@
+@import "../../common/screen";
+@import "../../common/colors";
+
+.sign-form__second {
+  .sf__second {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    .sf__title {
+      text-align: center;
+
+      .st-tit {
+
+          color: white;
+          font-size: 36px;
+
+      }
+
+      .st-tex {
+
+          color: white;
+          font-size: 20px;
+
+      }
+    }
+
+    form {
+      .sf__choice {
+        display: flex;
+        justify-content: center;
+        .sf__client {
+
+        }
+
+        .sf__agent {
+
+        }
+      }
+
+      .sf__btn {
+
+      }
+
+    }
+  }
+}
