@@ -7,21 +7,23 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    margin: 0 250px;
 
     .sf__title {
       text-align: center;
 
       .st-tit {
 
-          color: white;
-          font-size: 36px;
+        color: white;
+        font-size: 36px;
 
       }
 
       .st-tex {
+        padding: 30px 50px;
+        color: white;
+        font-size: 20px;
 
-          color: white;
-          font-size: 20px;
 
       }
     }
@@ -30,17 +32,74 @@
       .sf__choice {
         display: flex;
         justify-content: center;
-        .sf__client {
+
+        .active {
+          border-radius: 5px;
+          border: 2px solid $back_grey !important;
+        }
+
+        .inactive {
 
         }
 
-        .sf__agent {
+        .sf__agent-client {
+          border-radius: 5px;
+          border: 2px solid #334e6f;
+          padding: 10px 10px;
+          display: flex;
+          flex-direction: column;
+          width: 50%;
+
+          img {
+            padding-right: 15px;
+          }
+
+          label {
+            display: inline-block;
+          }
+
+          span {
+            color: $back_grey;
+            font-size: 24px;
+          }
+
+          .tex {
+            font-family: "Montserrat-ExtraLight", serif;
+            font-size: 16px;
+            font-weight: 400;
+            padding-top: 20px;
+          }
+
+          p {
+            color: $back_grey;
+          }
+
+          &:first-child {
+            margin-right: 15px;
+          }
+
+          &:last-child {
+            margin-left: 15px;
+          }
 
         }
       }
 
       .sf__btn {
+        margin-top: 45px;
+        margin-bottom: 70px;
 
+        button {
+          border-radius: 2px;
+          border: 1px solid $gold;
+          background-color: $gold;
+
+          font-family: "Montserrat-SemiBold", serif;
+          font-size: 19px;
+          font-weight: 400;
+          color: white;
+          padding: 15px 30px;
+        }
       }
 
     }

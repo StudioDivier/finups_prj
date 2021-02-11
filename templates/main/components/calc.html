@@ -41,7 +41,7 @@
                     <div class="calc-fz" id="calc-fz">
                         <div class="row-calc">
                             <div class="col-lg-6 change-point">
-                                <label class="calc-fz-area">
+                                <label class="calc-fz-area fz-get">
                                     <input class="with-gap" type="radio" name="fz" id="fz-44" value="fz44" checked>
                                     <span>223-ФЗ</span>
                                 </label>
@@ -135,16 +135,23 @@
             el.innerText = this.value;
             console.log(this.value);
         });
-        document.getElementById("calc-fz").addEventListener("input", function () {
-                document.getElementById("fz-223-1").addEventListener("change", evt => {
-                    if (bold) {
-                        document.getElementById("fz-223-1").style.border = "1px solid black"
-
-                    }
-                })
-            }
-        )
     });
+
+    let fz_area = document.querySelectorAll('.calc-fz-area');
+    let inputFZ = document.getElementsByName('fz');
+
+    for (let i = 0; i < inputFZ.length; i++) {
+        inputFZ[i].addEventListener('change', function (e) {
+            let target = e.target;
+            let label = e.path[1];
+            console.log(e)
+            for (let j = 0; j < fz_area.length; j++) {
+                fz_area[j].classList.remove('fz-get');
+            }
+
+            fz_area[i].classList.add('fz-get');
+        })
+    }
 
 
 </script>

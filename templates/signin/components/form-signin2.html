@@ -1,37 +1,61 @@
 {% load static %}
 <section class="sign-form__second">
-    <div class="sf__second">
-        <div class="sf__title">
-            <p class="st-tit">Как Вы планируете использовать Тендер Гарант?</p>
-            <p class="st-tex">Вы можете получать кэшбэк, приобретая услуги для себя, а также зарабатывать, продавая
-                услуги клиентам</p>
+    <div class="container">
+        <div class="sf__second">
+            <div class="sf__title">
+                <p class="st-tit">Как Вы планируете использовать Тендер Гарант?</p>
+                <p class="st-tex">Вы можете получать кэшбэк, приобретая услуги для себя, а также зарабатывать, продавая
+                    услуги клиентам</p>
+            </div>
+            <form class='choice__form' action="">
+                <div class="sf__choice">
+
+                    <label class="sf__agent-client active">
+                        <input class="with-gap inputAgent" type="radio" name="choice" id="client" value="client" style="display: none"
+                               checked>
+                        <span ><img class="input__img" src="{% static 'img/checked.png' %}" alt="">Клиент</span>
+                        <span class="tex">Вы планируете получать продукты
+                            и услуги для себя или своей
+                            организации с кэшбэком</span>
+                    </label>
+
+
+                    <label class="sf__agent-client">
+                        <input class="with-gap inputAgent" type="radio" name="choice" id="agent" value="agent" style="display: none">
+                        <span ><img class="input__img" src="{% static 'img/unchecked.png' %}" alt="">Агент</span>
+                        <span class="tex">Вы планируете оформлять
+                            заявки для клиентов и
+                            получать вознаграждение</span>
+                    </label>
+
+                </div>
+                <div class="sf__btn">
+                    <button type="submit">Завершить регистрацию</button>
+                </div>
+            </form>
         </div>
-
-        <form action="">
-            <div class="sf__choice">
-                <div class="sf__client">
-                    <label class="client__choice">
-                        <input class="with-gap" type="radio" name="client" id="client" value="client" checked>
-                        <span>Клиент</span>
-                    </label>
-                    <p>Вы планируете получать продукты
-                        и услуги для себя или своей
-                        организации с кэшбэком</p>
-                </div>
-                <div class="sf__agent">
-                    <label class="agent__choice">
-                        <input class="with-gap" type="radio" name="agent" id="agent" value="agent">
-                        <span>Агент</span>
-                    </label>
-                    <p>Вы планируете оформлять
-                        заявки для клиентов и
-                        получать вознаграждение</p>
-                </div>
-            </div>
-            <div class="sf__btn">
-                <button type="submit">Завершить регистрацию</button>
-            </div>
-        </form>
-
     </div>
 </section>
+
+
+<script>
+    let btn = document.querySelectorAll('.sf__agent-client');
+    let inputAgent = document.getElementsByName('choice');
+    let img_input = document.querySelectorAll('.input__img');
+
+    for (let i = 0; i < inputAgent.length; i++) {
+        inputAgent[i].addEventListener('change', function (e) {
+            let target = e.target;
+            let label = e.path[1];
+            console.log(e)
+            for (let j = 0; j< btn.length; j ++){
+                btn[j].classList.remove('active');
+                img_input[j].src = "{% static 'img/unchecked.png' %}";
+            }
+
+            btn[i].classList.add('active');
+            img_input[i].src = "{% static 'img/checked.png' %}";
+        })
+    }
+
+</script>
