@@ -11,3 +11,7 @@ def signin(request):
 
 def signin2(request):
     return render(request, 'signin/signin-page2.html')
+
+
+def personal_application(request):
+    return render(request, 'personal/personal_application.html')

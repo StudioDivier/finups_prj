@@ -1,10 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% load static %}
+<header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="{% static 'img/logo.png' %}" alt="logo">
+            </a>
+            <button class="navbar-toggler navbar-light bg-light" type="button" data-toggle="collapse"
+                    data-target="#MenuHeaderRow"
+                    aria-controls="MenuHeaderRow" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-</body>
-</html>
+            <div class="collapse navbar-collapse personal__header" id="MenuHeaderRow">
+                <ul class="navbar-nav headerMenu">
+
+                    <li class="nav-item personal__header__item">
+                        <img src="{% static 'img/personal/build.png' %}" alt="">
+                        <a class="nav-link" href="/">Добавить компанию </a>
+                    </li>
+
+                    <li class="nav-item personal__header__item">
+                        <img src="{% static 'img/personal/blank.png' %}" alt="">
+                        <a class="nav-link" href="/">Создать заявку</a>
+                    </li>
+
+                    <li class="nav-item personal__header__item">
+                        <img src="{% static 'img/personal/more_build.png' %}" alt="">
+                        <a class="nav-link" href="/">Все компании</a>
+                    </li>
+
+                    <li class="nav-item personal__header__item">
+                        <img src="{% static 'img/personal/list.png' %}" alt="">
+                        <a class="nav-link" href="/">Все заявки</a>
+                    </li>
+
+                    <li class="nav-item personal__header__item">
+                        <img src="{% static 'img/personal/admin.png' %}" alt="">
+                        <a class="nav-link" href="/">Администрирование</a>
+                    </li>
+
+                    <li class="nav-item dropdown personal__header__drop">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Куприн В.А.
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Мои данные</a>
+                            <a class="dropdown-item" href="#">Выход</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

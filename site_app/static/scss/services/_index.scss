@@ -1,1 +1,7 @@
-@import "components/s_list";
+// base
+@import "base/header";
+@import "base/title";
+@import "base/footer";
+
+// components
+@import "components/application_list";

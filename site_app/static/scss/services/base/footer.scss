@@ -1,0 +1,62 @@
+.personal__footer{
+  background-color: $back_grey;
+  .footer__line{
+    background-color: #c9d6df;
+    margin-bottom: 15px;
+  }
+
+  .icons{
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    a:focus{
+      outline: none;
+    }
+  }
+
+  .left{
+    display: flex;
+    justify-content: flex-start;
+
+    .icon{
+      margin: 0 5px;
+    }
+  }
+
+  .right{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .text{
+    a, p{
+      font-family: "Montserrat-ExtraLight", serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: $dblue;
+      @include max-w(424){
+        font-size: 12px;
+      }
+      @include max-w(375){
+        font-size: 10px;
+      }
+    }
+    a:focus{
+      outline: none;
+    }
+    a:hover{
+      text-decoration: none;
+    }
+    .left, .right{
+      @include max-w(991){
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+    .left{
+      @include max-w(991){
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

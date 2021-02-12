@@ -1,0 +1,60 @@
+@import "../../common/screen";
+@import "../../common/colors";
+
+
+.personal__header {
+  .personal__header__item {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+
+    a{
+      font-size: 16px;
+      font-family: "Montserrat", serif;
+      font-weight: 400;
+      @include max-w(1199){
+        font-size: 12px;
+      }
+      @include max-w(991){
+        font-size: 14px;
+        margin-left: 15px;
+      }
+    }
+  }
+
+  //.personal__header__btn{
+  //  background-color: $gold;
+  //  border-radius: 2px;
+  //  display: flex;
+  //  flex-direction: row;
+  //  text-align: center;
+  //  align-items: center;
+  //      justify-content: center;
+  //
+  //  margin: 5px 0;
+  //  a{
+  //    font-family: "Montserrat-SemiBold", serif;
+  //    font-size: 12px;
+  //    font-weight: 400;
+  //    @include max-w(1199){
+  //      font-size: 10px;
+  //    }
+  //  }
+  //}
+
+  .personal__header__drop{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    a{
+      font-size: 14px;
+
+      @include max-w(1199){
+        font-size: 12px;
+      }
+    }
+  }
+}

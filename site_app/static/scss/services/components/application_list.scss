@@ -1,0 +1,200 @@
+@import "../../common/screen";
+@import "../../common/colors";
+@import "../../common/mixins";
+
+
+.my-row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.my-col-50{
+  width: 50%;
+}
+
+.my-col-1{
+ width: 5.555%;
+}
+.my-col-2{
+ width: 5.555%*4;
+}
+.my-col-3{
+ width: 5.555%*4;
+}
+.my-col-4{
+ width: 5.555%*3;
+}
+.my-col-5{
+ width: 5.555%*3;
+}
+.my-col-6{
+ width: 5.555%*3;
+}
+
+.application__list {
+
+
+  .list__btn {
+    display: flex;
+    @include max-w(576){
+      flex-direction: column-reverse;
+    }
+
+    .list__filter {
+      display: flex;
+      justify-content: flex-start;
+      @include max-w(576){
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      button {
+        background-color: rgba(255, 255, 255, 0);
+        color: black;
+        padding: 10px 20px;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0);
+          color: black;
+        }
+
+        &::after {
+          margin-left: 90px;
+        }
+      }
+
+      .dropdown-menu {
+        padding-right: 57px;
+      }
+    }
+
+    .list__app {
+      display: flex;
+      justify-content: flex-end;
+      @include max-w(576){
+        justify-content: center;
+      }
+
+      button {
+        border-radius: 5px;
+        border: 1px solid $gold;
+        background-color: $gold;
+        color: white;
+        padding: 10px 20px;
+
+        img{
+          padding-left: 5px;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .application__table-lg{
+    margin: 30px 0;
+    @include max-w(991){
+      display: none;
+    }
+
+    .border-table{
+      background-color: white;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    .table__head{
+      padding-top: 10px;
+      .head__elems{
+        padding-bottom: 10px;
+        .head__elem{
+          color: $dblue;
+          font-size: 19px;
+          font-family: "Montserrat-Medium", serif;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .table__body{
+      padding: 5px 0;
+      .table__elems{
+        padding: 15px 0;
+        .body__elem{
+          font-size: 15px;
+          font-family: "Montserrat-Medium", serif;
+          font-weight: 400;
+        }
+
+        .summa{
+           font-family: "Montserrat-SemiBold", serif;
+        }
+      }
+    }
+  }
+
+  .application__table-min{
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    @include min-w(992){
+      display: none;
+    }
+
+    .table__min-elem{
+      margin: 15px 0;
+
+      padding: 20px 40px 20px 10px;
+
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+
+      .t__obj{
+        border: 1px solid $dblue;
+        background-color: #ffffff;
+        padding: 20px 10px 20px 10px;
+
+      }
+
+      .t__elem{
+        background-color: $back_grey;
+        padding: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        .elem__title{
+          color: $dblue;
+          font-size: 19px;
+          font-family: "Montserrat-Medium", serif;
+          font-weight: 600;
+          p{
+            margin-bottom: 0;
+          }
+
+        }
+        .elem__value{
+          color: black;
+          font-size: 15px;
+          font-family: "Montserrat-Medium", serif;
+          font-weight: 400;
+          p{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+
+}

@@ -1,10 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% load static %}
+<footer class="personal__footer">
+    <div class="container">
+        <hr class="footer__line">
+        <div class="row icons">
+            <div class="col-lg-6 left">
+                <div class="icon fb-link">
+                    <a href="https://www.facebook.com">
+                        <img src="{% static 'img/personal/fb-icon.png' %}" alt="">
+                    </a>
+                </div>
+                <div class="icon vk-link">
+                    <a href="https://www.vk.com">
+                        <img src="{% static 'img/personal/vk-icon.png' %}" alt="">
+                    </a>
+                </div>
+                <div class="icon tg-link">
+                    <a href="https://www.telegram.org">
+                        <img src="{% static 'img/personal/tg-icon.png' %}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6"></div>
+        </div>
+        <div class="row text">
+            <div class="col-lg-6 left">
+                <div class="copyright">
+                    <p>© ООО «Тендер Гарант» Все права защищены 2021 г.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 right">
+                <div class="personal">
+                    <a href="">Политика обработки персональных данных</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
