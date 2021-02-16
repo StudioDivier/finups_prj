@@ -15,3 +15,11 @@ def signin2(request):
 
 def personal_application(request):
     return render(request, 'personal/personal_application.html')
+
+
+def personal_company(request):
+    return render(request, 'personal/personal_company.html')
+
+
+def create_create_app(request):
+    return render(request, 'personal/create_application.html')

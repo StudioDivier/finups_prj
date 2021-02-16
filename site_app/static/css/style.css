@@ -2327,40 +2327,245 @@ footer .studio {
 }
 .application__list .application__table-min .table__min-elem {
   margin: 15px 0;
-  padding: 20px 40px 20px 10px;
+  width: 100%;
+  border: 1px solid #e6e6ef;
 }
 .application__list .application__table-min .table__min-elem:last-child {
   margin-bottom: 0;
 }
-.application__list .application__table-min .table__min-elem .t__obj {
-  border: 1px solid #162a43;
-  background-color: #ffffff;
-  padding: 20px 10px 20px 10px;
+.application__list .application__table-min .table__min-elem .t__obj .num__section {
+  background-color: white;
 }
-.application__list .application__table-min .table__min-elem .t__elem {
-  background-color: #f9fbfd;
-  padding: 10px;
-  margin-bottom: 10px;
+.application__list .application__table-min .table__min-elem .t__obj .num__section .elem_numer {
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  width: 100%;
+}
+.application__list .application__table-min .table__min-elem .t__obj .num__section .elem_numer p {
+  margin-bottom: 0;
+  color: #162a43;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Montserrat-Medium", serif;
+}
+@media (max-width: 375px) {
+  .application__list .application__table-min .table__min-elem .t__obj .num__section .elem_numer p {
+    font-size: 16px;
+  }
+}
+.application__list .application__table-min .table__min-elem .t__obj .num__section .elem_number {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.application__list .application__table-min .table__min-elem .t__obj .num__section .elem_number p {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 500;
+}
+@media (max-width: 375px) {
+  .application__list .application__table-min .table__min-elem .t__obj .num__section .elem_number p {
+    font-size: 14px;
+  }
+}
+.application__list .application__table-min .table__min-elem .t__elem__value {
+  background-color: #f9fbfd;
+}
+.application__list .application__table-min .table__min-elem .t__elem {
+  padding: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border-top: 1px solid #e6e6ef;
+  border-right: 1px solid #e6e6ef;
+  border-left: 1px solid #e6e6ef;
 }
 .application__list .application__table-min .table__min-elem .t__elem .elem__title {
   color: #162a43;
-  font-size: 19px;
+  font-size: 16px;
   font-family: "Montserrat-Medium", serif;
   font-weight: 600;
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 375px) {
+  .application__list .application__table-min .table__min-elem .t__elem .elem__title {
+    font-size: 11px;
+  }
 }
 .application__list .application__table-min .table__min-elem .t__elem .elem__title p {
   margin-bottom: 0;
 }
 .application__list .application__table-min .table__min-elem .t__elem .elem__value {
   color: black;
+  font-size: 14px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: flex-start;
+}
+@media (max-width: 375px) {
+  .application__list .application__table-min .table__min-elem .t__elem .elem__value {
+    font-size: 11px;
+  }
+}
+.application__list .application__table-min .table__min-elem .t__elem .elem__value p {
+  margin-bottom: 0;
+}
+
+.my-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.company_list .my-col-1 {
+  width: 5.555%;
+}
+.company_list .my-col-5 {
+  width: 27.775%;
+}
+.company_list .my-col-6 {
+  width: 33.33%;
+}
+.company_list .application__table-lg {
+  margin: 30px 0;
+}
+@media (max-width: 991px) {
+  .company_list .application__table-lg {
+    display: none;
+  }
+}
+.company_list .application__table-lg .border-table {
+  background-color: white;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.company_list .application__table-lg .table__head {
+  padding-top: 10px;
+}
+.company_list .application__table-lg .table__head .head__elems {
+  padding-bottom: 10px;
+}
+.company_list .application__table-lg .table__head .head__elems .head__elem {
+  color: #162a43;
+  font-size: 19px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 600;
+}
+.company_list .application__table-lg .table__body {
+  padding: 5px 0;
+}
+.company_list .application__table-lg .table__body .table__elems {
+  padding: 15px 0;
+}
+.company_list .application__table-lg .table__body .table__elems .body__elem {
   font-size: 15px;
   font-family: "Montserrat-Medium", serif;
   font-weight: 400;
 }
-.application__list .application__table-min .table__min-elem .t__elem .elem__value p {
+.company_list .application__table-lg .table__body .table__elems .summa {
+  font-family: "Montserrat-SemiBold", serif;
+}
+.company_list .application__table-min {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 992px) {
+  .company_list .application__table-min {
+    display: none;
+  }
+}
+.company_list .application__table-min .table__min-elem {
+  margin: 15px 0;
+  width: 100%;
+  border: 1px solid #e6e6ef;
+}
+.company_list .application__table-min .table__min-elem:last-child {
+  margin-bottom: 0;
+}
+.company_list .application__table-min .table__min-elem .t__obj .num__section {
+  background-color: white;
+}
+.company_list .application__table-min .table__min-elem .t__obj .num__section .elem_numer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.company_list .application__table-min .table__min-elem .t__obj .num__section .elem_numer p {
+  margin-bottom: 0;
+  color: #162a43;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Montserrat-Medium", serif;
+}
+@media (max-width: 375px) {
+  .company_list .application__table-min .table__min-elem .t__obj .num__section .elem_numer p {
+    font-size: 16px;
+  }
+}
+.company_list .application__table-min .table__min-elem .t__obj .num__section .elem_number {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.company_list .application__table-min .table__min-elem .t__obj .num__section .elem_number p {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 500;
+}
+@media (max-width: 375px) {
+  .company_list .application__table-min .table__min-elem .t__obj .num__section .elem_number p {
+    font-size: 14px;
+  }
+}
+.company_list .application__table-min .table__min-elem .t__elem__value {
+  background-color: #f9fbfd;
+}
+.company_list .application__table-min .table__min-elem .t__elem {
+  padding: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border-top: 1px solid #e6e6ef;
+  border-right: 1px solid #e6e6ef;
+  border-left: 1px solid #e6e6ef;
+}
+.company_list .application__table-min .table__min-elem .t__elem .elem__title {
+  color: #162a43;
+  font-size: 16px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 375px) {
+  .company_list .application__table-min .table__min-elem .t__elem .elem__title {
+    font-size: 11px;
+  }
+}
+.company_list .application__table-min .table__min-elem .t__elem .elem__title p {
+  margin-bottom: 0;
+}
+.company_list .application__table-min .table__min-elem .t__elem .elem__value {
+  color: black;
+  font-size: 14px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: flex-start;
+}
+@media (max-width: 375px) {
+  .company_list .application__table-min .table__min-elem .t__elem .elem__value {
+    font-size: 11px;
+  }
+}
+.company_list .application__table-min .table__min-elem .t__elem .elem__value p {
   margin-bottom: 0;
 }
 
@@ -2988,39 +3193,244 @@ footer .studio {
 }
 .application__list .application__table-min .table__min-elem {
   margin: 15px 0;
-  padding: 20px 40px 20px 10px;
+  width: 100%;
+  border: 1px solid #e6e6ef;
 }
 .application__list .application__table-min .table__min-elem:last-child {
   margin-bottom: 0;
 }
-.application__list .application__table-min .table__min-elem .t__obj {
-  border: 1px solid #162a43;
-  background-color: #ffffff;
-  padding: 20px 10px 20px 10px;
+.application__list .application__table-min .table__min-elem .t__obj .num__section {
+  background-color: white;
 }
-.application__list .application__table-min .table__min-elem .t__elem {
-  background-color: #f9fbfd;
-  padding: 10px;
-  margin-bottom: 10px;
+.application__list .application__table-min .table__min-elem .t__obj .num__section .elem_numer {
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  width: 100%;
+}
+.application__list .application__table-min .table__min-elem .t__obj .num__section .elem_numer p {
+  margin-bottom: 0;
+  color: #162a43;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Montserrat-Medium", serif;
+}
+@media (max-width: 375px) {
+  .application__list .application__table-min .table__min-elem .t__obj .num__section .elem_numer p {
+    font-size: 16px;
+  }
+}
+.application__list .application__table-min .table__min-elem .t__obj .num__section .elem_number {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.application__list .application__table-min .table__min-elem .t__obj .num__section .elem_number p {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 500;
+}
+@media (max-width: 375px) {
+  .application__list .application__table-min .table__min-elem .t__obj .num__section .elem_number p {
+    font-size: 14px;
+  }
+}
+.application__list .application__table-min .table__min-elem .t__elem__value {
+  background-color: #f9fbfd;
+}
+.application__list .application__table-min .table__min-elem .t__elem {
+  padding: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border-top: 1px solid #e6e6ef;
+  border-right: 1px solid #e6e6ef;
+  border-left: 1px solid #e6e6ef;
 }
 .application__list .application__table-min .table__min-elem .t__elem .elem__title {
   color: #162a43;
-  font-size: 19px;
+  font-size: 16px;
   font-family: "Montserrat-Medium", serif;
   font-weight: 600;
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 375px) {
+  .application__list .application__table-min .table__min-elem .t__elem .elem__title {
+    font-size: 11px;
+  }
 }
 .application__list .application__table-min .table__min-elem .t__elem .elem__title p {
   margin-bottom: 0;
 }
 .application__list .application__table-min .table__min-elem .t__elem .elem__value {
   color: black;
+  font-size: 14px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: flex-start;
+}
+@media (max-width: 375px) {
+  .application__list .application__table-min .table__min-elem .t__elem .elem__value {
+    font-size: 11px;
+  }
+}
+.application__list .application__table-min .table__min-elem .t__elem .elem__value p {
+  margin-bottom: 0;
+}
+
+.my-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.company_list .my-col-1 {
+  width: 5.555%;
+}
+.company_list .my-col-5 {
+  width: 27.775%;
+}
+.company_list .my-col-6 {
+  width: 33.33%;
+}
+.company_list .application__table-lg {
+  margin: 30px 0;
+}
+@media (max-width: 991px) {
+  .company_list .application__table-lg {
+    display: none;
+  }
+}
+.company_list .application__table-lg .border-table {
+  background-color: white;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.company_list .application__table-lg .table__head {
+  padding-top: 10px;
+}
+.company_list .application__table-lg .table__head .head__elems {
+  padding-bottom: 10px;
+}
+.company_list .application__table-lg .table__head .head__elems .head__elem {
+  color: #162a43;
+  font-size: 19px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 600;
+}
+.company_list .application__table-lg .table__body {
+  padding: 5px 0;
+}
+.company_list .application__table-lg .table__body .table__elems {
+  padding: 15px 0;
+}
+.company_list .application__table-lg .table__body .table__elems .body__elem {
   font-size: 15px;
   font-family: "Montserrat-Medium", serif;
   font-weight: 400;
 }
-.application__list .application__table-min .table__min-elem .t__elem .elem__value p {
+.company_list .application__table-lg .table__body .table__elems .summa {
+  font-family: "Montserrat-SemiBold", serif;
+}
+.company_list .application__table-min {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 992px) {
+  .company_list .application__table-min {
+    display: none;
+  }
+}
+.company_list .application__table-min .table__min-elem {
+  margin: 15px 0;
+  width: 100%;
+  border: 1px solid #e6e6ef;
+}
+.company_list .application__table-min .table__min-elem:last-child {
+  margin-bottom: 0;
+}
+.company_list .application__table-min .table__min-elem .t__obj .num__section {
+  background-color: white;
+}
+.company_list .application__table-min .table__min-elem .t__obj .num__section .elem_numer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.company_list .application__table-min .table__min-elem .t__obj .num__section .elem_numer p {
+  margin-bottom: 0;
+  color: #162a43;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Montserrat-Medium", serif;
+}
+@media (max-width: 375px) {
+  .company_list .application__table-min .table__min-elem .t__obj .num__section .elem_numer p {
+    font-size: 16px;
+  }
+}
+.company_list .application__table-min .table__min-elem .t__obj .num__section .elem_number {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.company_list .application__table-min .table__min-elem .t__obj .num__section .elem_number p {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 500;
+}
+@media (max-width: 375px) {
+  .company_list .application__table-min .table__min-elem .t__obj .num__section .elem_number p {
+    font-size: 14px;
+  }
+}
+.company_list .application__table-min .table__min-elem .t__elem__value {
+  background-color: #f9fbfd;
+}
+.company_list .application__table-min .table__min-elem .t__elem {
+  padding: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border-top: 1px solid #e6e6ef;
+  border-right: 1px solid #e6e6ef;
+  border-left: 1px solid #e6e6ef;
+}
+.company_list .application__table-min .table__min-elem .t__elem .elem__title {
+  color: #162a43;
+  font-size: 16px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 375px) {
+  .company_list .application__table-min .table__min-elem .t__elem .elem__title {
+    font-size: 11px;
+  }
+}
+.company_list .application__table-min .table__min-elem .t__elem .elem__title p {
+  margin-bottom: 0;
+}
+.company_list .application__table-min .table__min-elem .t__elem .elem__value {
+  color: black;
+  font-size: 14px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: flex-start;
+}
+@media (max-width: 375px) {
+  .company_list .application__table-min .table__min-elem .t__elem .elem__value {
+    font-size: 11px;
+  }
+}
+.company_list .application__table-min .table__min-elem .t__elem .elem__value p {
   margin-bottom: 0;
 }

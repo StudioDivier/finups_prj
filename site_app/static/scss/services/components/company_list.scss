@@ -9,99 +9,19 @@
   justify-content: center;
 }
 
-.my-col-50 {
-  width: 50%;
-}
-
-.my-col-1 {
-  width: 5.555%;
-}
-
-.my-col-2 {
-  width: 5.555%*4;
-}
-
-.my-col-3 {
-  width: 5.555%*4;
-}
-
-.my-col-4 {
-  width: 5.555%*3;
-}
-
-.my-col-5 {
-  width: 5.555%*3;
-}
-
-.my-col-6 {
-  width: 5.555%*3;
-}
-
-.application__list {
-
-
-  .list__btn {
-    display: flex;
-    @include max-w(576) {
-      flex-direction: column-reverse;
-    }
-
-    .list__filter {
-      display: flex;
-      justify-content: flex-start;
-      @include max-w(576) {
-        justify-content: center;
-        margin-top: 20px;
-      }
-
-      button {
-        background-color: rgba(255, 255, 255, 0);
-        color: black;
-        padding: 10px 20px;
-
-        &:focus {
-          outline: none;
-        }
-
-        &:hover {
-          background-color: rgba(255, 255, 255, 0);
-          color: black;
-        }
-
-        &::after {
-          margin-left: 90px;
-        }
-      }
-
-      .dropdown-menu {
-        padding-right: 57px;
-      }
-    }
-
-    .list__app {
-      display: flex;
-      justify-content: flex-end;
-      @include max-w(576) {
-        justify-content: center;
-      }
-
-      button {
-        border-radius: 5px;
-        border: 1px solid $gold;
-        background-color: $gold;
-        color: white;
-        padding: 10px 20px;
-
-        img {
-          padding-left: 5px;
-        }
-
-        &:focus {
-          outline: none;
-        }
-      }
-    }
+.company_list {
+  .my-col-1 {
+    width: 5.555%*1;
   }
+
+  .my-col-5 {
+    width: 5.555%*5;
+  }
+
+  .my-col-6 {
+    width: 5.555%*6;
+  }
+
 
   .application__table-lg {
     margin: 30px 0;
