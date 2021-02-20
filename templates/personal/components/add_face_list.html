@@ -1,0 +1,192 @@
+{% load  static %}
+
+<section class="add__person">
+    <div class="container">
+        <div class="info-header9 choice-person">
+            <label class="person">
+                <input class="with-gap fiz info-header-tab9" type="radio" name="person" id="ur" value="ur" checked>
+                <span>Юр. лицо</span>
+            </label>
+            <label class="person">
+                <input class="with-gap ur info-header-tab9" type="radio" name="person" id="fiz" value="fiz">
+                <span>Физ. лицо</span>
+            </label>
+        </div>
+
+        <div class="form-ur info-tabcontent9 show-tab">
+            <form action="">
+                <div class="ur-elem ur-inn">
+                    <input type="text" class="ur-input" name="inn" id="inn" placeholder="ИНН *" required>
+                </div>
+                <div class="ur-elem fiz-form__org">
+                    <label for="form-org">Форма организации
+                        <select class="custom-select" id="form-org">
+                            <option selected>Выбор</option>
+                            <option value="1">ИП</option>
+                            <option value="2">ООО</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="ur-elem ur-name">
+                    <input type="text" class="ur-input" name="name" id="name" placeholder="Название организации">
+                </div>
+                <div class="ur-elem ur-kpp">
+                    <input type="text" class="ur-input" name="kpp" id="kpp" placeholder="КПП">
+                </div>
+                <div class="ur-elem ur-ogrn">
+                    <input type="tel" class="ur-input" name="ogrn" id="ogrn" placeholder="ОГРН" required>
+                </div>
+                <div class="ur-elem ur-rs">
+                    <input type="email" class="ur-input" name="rs" id="rs" placeholder="Расчетный счет" required>
+                </div>
+                <div class="ur-elem ur-bic">
+                    <input type="email" class="ur-input" name="bic" id="bic" placeholder="БИК" required>
+                </div>
+                <div class="ur-elem ur-bank">
+                    <input type="email" class="ur-input" name="bank" id="bank" placeholder="Наименование банка"
+                           required>
+                </div>
+                <div class="ur-elem ur-kr">
+                    <input type="email" class="ur-input" name="kr" id="kr" placeholder="Кор. счет" required>
+                </div>
+                <div class="ur-elem ur-gen">
+                    <input type="email" class="ur-input" name="gen" id="gen" placeholder="Генеральный директор (ФИО)"
+                           required>
+                </div>
+                <div class="ur-elem ur-buh">
+                    <input type="email" class="ur-input" name="buh" id="buh" placeholder="Главный бухгалтер (ФИО)"
+                           required>
+                </div>
+
+                <div class="ur-elem ur-ustav file-upload">
+                    <label for="ustav">
+                        <span>Устав</span>
+
+                            <input type="file" class="ur-input" name="ustav" id="ustav">
+                    </label>
+                </div>
+
+                <div class="ur-elem ur-ustav file-upload">
+                    <label for="ustav">
+                        <span>ЕГРЮ/ЕГРИП</span>
+
+                            <input type="file" class="ur-input" name="ustav" id="ustav">
+                    </label>
+                </div>
+
+                <div class="ur-elem ur-ustav file-upload">
+                    <label for="ustav">
+                        <span>Свидетельство</span>
+
+                            <input type="file" class="ur-input" name="ustav" id="ustav">
+                    </label>
+                </div>
+
+                <div class="ur-elem ur-ustav file-upload">
+                    <label for="ustav">
+                        <span>что-то еще</span>
+
+                            <input type="file" class="ur-input" name="ustav" id="ustav">
+                    </label>
+                </div>
+
+                <div class="ur-elem ur-ustav file-upload">
+                    <label for="ustav">
+                        <span>Приказ</span>
+
+                            <input type="file" class="ur-input" name="ustav" id="ustav">
+                    </label>
+                </div>
+
+                <div class="ur-elem ur-ustav file-upload">
+                    <label for="ustav">
+                        <span>Баланс за 19' год</span>
+
+                            <input type="file" class="ur-input" name="ustav" id="ustav">
+                    </label>
+                </div>
+
+                <div class="ur-elem ur-ustav file-upload">
+                    <label for="ustav">
+                        <span>Баланс за 20' год</span>
+
+                            <input type="file" class="ur-input" name="ustav" id="ustav">
+                    </label>
+                </div>
+
+                <div class="btn-row">
+                    <button type="submit">Далее</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-fiz info-tabcontent9 hide-tab">
+            <form action="">
+                <div class="fiz-elem fiz-second__name">
+                    <input type="text" class="fiz-input" name="second__name" id="second__name" placeholder="Фамилия *"
+                           required>
+                </div>
+                <div class="fiz-elem fiz-fist__name">
+                    <input type="text" class="fiz-input" name="fist__name" id="fist__name" placeholder="Имя *" required>
+                </div>
+                <div class="fiz-elem fiz-last__name">
+                    <input type="text" class="fiz-input" name="last__name" id="last__name" placeholder="Отчество">
+                </div>
+                <div class="fiz-elem fiz-city">
+                    <input type="text" class="fiz-input" name="city" id="city" placeholder="Город">
+                </div>
+                <div class="fiz-elem fiz-number">
+                    <input type="tel" class="fiz-input" name="number" id="number" placeholder="Телефон *" required>
+                </div>
+                <div class="fiz-elem fiz-email">
+                    <input type="email" class="fiz-input" name="email" id="email" placeholder="Email *" required>
+                </div>
+                <div class="btn-row">
+                    <button type="submit">Далее</button>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</section>
+
+<script>
+
+    const tab9 = document.querySelectorAll('.info-header-tab9');
+    const info9 = document.querySelector('.info-header9');
+    const tabContent9 = document.querySelectorAll('.info-tabcontent9');
+
+    function hideTabContent9(a) {
+        for (let i = a; i < tabContent9.length; i++) {
+
+            tabContent9[i].classList.remove('show-tab');
+            tabContent9[i].classList.add('hide-tab');
+        }
+    }
+
+    hideTabContent9(1);
+
+    function showTabContent9(b) {
+        if (tabContent9[b].classList.contains('hide-tab')) {
+
+            tabContent9[b].classList.remove('hide-tab');
+            tabContent9[b].classList.add('show-tab');
+        }
+    }
+
+    info9.addEventListener('click', function (event) {
+        let target = event.target;
+        console.log(target)
+        if (target && target.classList.contains('info-header-tab9')) {
+            for (let i = 0; i < tab9.length; i++) {
+                if (target == tab9[i]) {
+                    hideTabContent9(0);
+                    showTabContent9(i);
+                    break;
+                }
+            }
+        }
+    });
+
+</script>

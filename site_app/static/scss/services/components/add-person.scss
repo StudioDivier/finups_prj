@@ -1,0 +1,228 @@
+@import "../../common/screen";
+@import "../../common/colors";
+@import "../../common/mixins";
+
+.add__person {
+  .choice-person {
+    display: flex;
+
+    .person {
+      margin-bottom: 0;
+
+      input[type=radio] {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+        box-sizing: border-box;
+        padding: 0;
+      }
+
+      span {
+        position: relative;
+        padding-left: 35px;
+        cursor: pointer;
+        display: inline-block;
+        height: 25px;
+        line-height: 25px;
+        font-size: 14px;
+        transition: .28s ease;
+        user-select: none;
+        //@include adjustableText(12px, 14px, 15px, 18px);
+
+        &:before {
+          border: 1px solid #465e6a;
+          content: '';
+          position: absolute;
+          left: 0;
+          top: -2px;
+          margin: 4px;
+          width: 19px;
+          height: 19px;
+          z-index: 0;
+          transition: .28s ease;
+          border-radius: 50%;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: -2px;
+          margin: 4px;
+          width: 19px;
+          height: 19px;
+          z-index: 0;
+          transition: .28s ease;
+          border-radius: 50%;
+        }
+      }
+
+      input[type="radio"]:disabled + span {
+        opacity: 0.3;
+      }
+
+      input[type=radio].with-gap:checked + span:after {
+        transform: scale(0.65);
+      }
+
+      input[type="radio"]:checked + span:after {
+        background-color: black;
+      }
+
+      input[type="radio"]:checked + span {
+        font-weight: 700;
+      }
+
+      input[type=radio]:checked + span:before {
+        border: 1px solid #465e6a;
+      }
+
+      input[type=radio]:checked + label {
+        border: 1px solid black;
+      }
+
+    }
+
+    .person {
+      &:first-child {
+        margin-right: 25px;
+      }
+
+      input {
+        display: none;
+      }
+    }
+
+
+  }
+
+  .deactivate {
+    display: none;
+  }
+
+  .form-fiz {
+    @include min-w(991) {
+      width: 40%;
+    }
+
+
+    form {
+      .fiz-elem {
+        margin: 20px 0;
+
+        .fiz-input {
+          width: 100%;
+
+        }
+
+        input {
+          margin-top: 5px;
+          width: 100%;
+          padding: 10px 15px;
+          border: 1px solid #dde1e4;
+          border-radius: 5px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        input::placeholder {
+          font-size: 15px;
+          color: #0e1c2d;
+          font-family: "Montserrat-SemiBold", serif;
+        }
+      }
+
+      .btn-row {
+        display: flex;
+        flex-direction: row;
+
+
+        button {
+          width: 100%;
+          padding: 15px 80px;
+          background-color: $gold;
+          border: 1px solid $gold;
+          border-radius: 5px;
+          color: #ffffff;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+
+  .form-ur {
+    @include min-w(991) {
+      width: 40%;
+    }
+
+
+    form {
+      .ur-elem {
+        margin: 20px 0;
+
+        .ur-input {
+          width: 100%;
+
+        }
+
+        label{
+          width: 100%;
+          span{
+            font-size: 15px;
+          color: #0e1c2d;
+          font-family: "Montserrat-SemiBold", serif;
+          }
+        }
+        select{
+          width: 100%;
+
+          &:focus{
+            outline: none;
+          }
+        }
+
+        input {
+          margin-top: 5px;
+          width: 100%;
+          padding: 10px 15px;
+          border: 1px solid #dde1e4;
+          border-radius: 5px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        input::placeholder {
+          font-size: 15px;
+          color: #0e1c2d;
+          font-family: "Montserrat-SemiBold", serif;
+        }
+      }
+
+      .btn-row {
+        display: flex;
+        flex-direction: row;
+
+
+        button {
+          width: 100%;
+          padding: 15px 80px;
+          background-color: $gold;
+          border: 1px solid $gold;
+          border-radius: 5px;
+          color: #ffffff;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}

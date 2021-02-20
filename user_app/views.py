@@ -23,3 +23,11 @@ def personal_company(request):
 
 def create_create_app(request):
     return render(request, 'personal/create_application.html')
+
+
+def create_partners(request):
+    return render(request, 'personal/create_partners.html')
+
+
+def add_face(request):
+    return render(request, 'personal/add_face.html')
