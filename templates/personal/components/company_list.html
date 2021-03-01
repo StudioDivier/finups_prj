@@ -20,34 +20,15 @@
                 <hr class="border-table">
             </div>
             <div class="table__body">
+                {% for entity in entity_list %}
                 <div class="my-row table__elems">
-                    <div class="my-col-1 body__elem">1</div>
-                    <div class="my-col-6 body__elem">ОАО "Педигри-Рус"</div>
-                    <div class="my-col-5 body__elem">7845628419</div>
-                    <div class="my-col-6 body__elem">12.02.2021 14:00</div>
+                    <div class="my-col-1 body__elem">{{ entity.id }}</div>
+                    <div class="my-col-6 body__elem">{{  entity.org_form }} {{ entity.org_name }}</div>
+                    <div class="my-col-5 body__elem">{{ entity.org_inn }}</div>
+                    <div class="my-col-6 body__elem">{{ entity.date_request }}</div>
                 </div>
-
                 <hr class="border-table">
-
-                <div class="my-row table__elems">
-                    <div class="my-col-1 body__elem">23</div>
-                    <div class="my-col-6 body__elem">ОАО "Педигри-Рус"</div>
-                    <div class="my-col-5 body__elem">7845628419</div>
-                    <div class="my-col-6 body__elem">12.02.2021 14:00</div>
-                </div>
-
-                <hr class="border-table">
-
-                <div class="my-row table__elems">
-                    <div class="my-col-1 body__elem">786</div>
-                    <div class="my-col-6 body__elem">ОАО "Педигри-Рус"</div>
-                    <div class="my-col-5 body__elem">7845628419</div>
-                    <div class="my-col-6 body__elem">12.02.2021 14:00</div>
-                </div>
-
-                <hr class="border-table">
-
-
+                {% endfor %}
             </div>
 
         </div>
@@ -55,67 +36,28 @@
         <div class="my-row application__table-min">
 
             <div class="table__min-elem ">
-
+                {% for entity in entity_list %}
                 <div class="t__obj">
                     <div class="t__elem num__section">
                         <div class="elem__num elem_numer"><p>№</p></div>
                     </div>
                     <div class="t__elem num__section">
-                        <div class="elem__num elem_number"><p>1</p></div>
+                        <div class="elem__num elem_number"><p>{{ entity.id }}</p></div>
                     </div>
                     <div class="t__elem elem-company t__elem__value">
                         <div class="elem__title"><p>Компания</p></div>
-                        <div class="elem__value"><p>ООО “ПРОСТО ВЕБ”</p></div>
+                        <div class="elem__value"><p>{{  entity.org_form }} {{ entity.org_name }}</p></div>
                     </div>
                     <div class="t__elem elem-product t__elem__value">
                         <div class="elem__title"><p>ИНН</p></div>
-                        <div class="elem__value"><p>1122334455</p></div>
+                        <div class="elem__value"><p>{{ entity.org_inn }}</p></div>
                     </div>
                     <div class="t__elem elem-summa t__elem__value">
                         <div class="elem__title"><p>Дата добавления</p></div>
-                        <div class="elem__value"><p>12.02.2021 14:00</p></div>
+                        <div class="elem__value"><p>{{ entity.date_request }}</p></div>
                     </div>
                 </div>
-                <div class="t__obj">
-                    <div class="t__elem num__section">
-                        <div class="elem__num elem_numer"><p>№</p></div>
-                    </div>
-                    <div class="t__elem num__section">
-                        <div class="elem__num elem_number"><p>1</p></div>
-                    </div>
-                    <div class="t__elem elem-company t__elem__value">
-                        <div class="elem__title"><p>Компания</p></div>
-                        <div class="elem__value"><p>ООО “ПРОСТО ВЕБ”</p></div>
-                    </div>
-                    <div class="t__elem elem-product t__elem__value">
-                        <div class="elem__title"><p>ИНН</p></div>
-                        <div class="elem__value"><p>1122334455</p></div>
-                    </div>
-                    <div class="t__elem elem-summa t__elem__value">
-                        <div class="elem__title"><p>Дата добавления</p></div>
-                        <div class="elem__value"><p>12.02.2021 14:00</p></div>
-                    </div>
-                </div>
-                <div class="t__obj">
-                    <div class="t__elem num__section">
-                        <div class="elem__num elem_numer"><p>№</p></div>
-                    </div>
-                    <div class="t__elem num__section">
-                        <div class="elem__num elem_number"><p>1</p></div>
-                    </div>
-                    <div class="t__elem elem-company t__elem__value">
-                        <div class="elem__title"><p>Компания</p></div>
-                        <div class="elem__value"><p>ООО “ПРОСТО ВЕБ”</p></div>
-                    </div>
-                    <div class="t__elem elem-product t__elem__value">
-                        <div class="elem__title"><p>ИНН</p></div>
-                        <div class="elem__value"><p>1122334455</p></div>
-                    </div>
-                    <div class="t__elem elem-summa t__elem__value">
-                        <div class="elem__title"><p>Дата добавления</p></div>
-                        <div class="elem__value"><p>12.02.2021 14:00</p></div>
-                    </div>
-                </div>
+                {% endfor %}
 
             </div>
 

@@ -5,12 +5,18 @@ from . import views
 app_name = 'personal'
 
 urlpatterns = [
-    path('log-in', views.login, name='login'),
-    path('sign-in', views.signin, name='signin'),
-    path('sign-in/second', views.signin2, name='signin2'),
-    path('applications', views.personal_application, name='personal_application'),
-    path('company', views.personal_company, name='personal_company'),
-    path('create-application', views.create_create_app, name='create_application'),
-    path('create-partners', views.create_partners, name='create_partners'),
-    path('add-person', views.add_face, name='add-person'),
+    path('login', views.LoginView.as_view(), name="login"),
+
+    path('sign-in', views.RegisterView.as_view(), name='signin'),
+    path('sign-in/second', views.Register2View.as_view(), name='signin2'),
+
+    path('logout', views.log_out, name='logout'),
+
+    path('applications', views.ProfilePage.as_view(), name='personal_application'),
+    path('create-application', views.CreateAppView.as_view(), name='create_application'),
+
+    path('company', views.PersonalCompanyView.as_view(), name='personal_company'),
+    path('add-company', views.AddCompanyView.as_view(), name='add_company'),
+
+    path('create-partners/<int:id_app>', views.CreatePartView.as_view(), name='create_partners'),
 ]

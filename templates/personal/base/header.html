@@ -16,22 +16,22 @@
 
                     <li class="nav-item personal__header__item">
                         <img src="{% static 'img/personal/build.png' %}" alt="">
-                        <a class="nav-link" href="/">Добавить компанию </a>
+                        <a class="nav-link" href="/personal/add-company">Добавить компанию </a>
                     </li>
 
                     <li class="nav-item personal__header__item">
                         <img src="{% static 'img/personal/blank.png' %}" alt="">
-                        <a class="nav-link" href="/">Создать заявку</a>
+                        <a class="nav-link" href="/personal/create-application">Создать заявку</a>
                     </li>
 
                     <li class="nav-item personal__header__item">
                         <img src="{% static 'img/personal/more_build.png' %}" alt="">
-                        <a class="nav-link" href="/">Все компании</a>
+                        <a class="nav-link" href="/personal/company">Все компании</a>
                     </li>
 
                     <li class="nav-item personal__header__item">
                         <img src="{% static 'img/personal/list.png' %}" alt="">
-                        <a class="nav-link" href="/">Все заявки</a>
+                        <a class="nav-link" href="/personal/applications">Все заявки</a>
                     </li>
 
                     <li class="nav-item personal__header__item">
@@ -42,11 +42,11 @@
                     <li class="nav-item dropdown personal__header__drop">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Куприн В.А.
+                            {{ user.username }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="#">Мои данные</a>
-                            <a class="dropdown-item" href="#">Выход</a>
+                            <a class="dropdown-item" href="/personal/logout">Выход</a>
                         </div>
                     </li>
                 </ul>

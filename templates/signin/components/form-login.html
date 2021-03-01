@@ -1,9 +1,17 @@
 {% load static %}
 <section class="form-login">
     <div class="container center">
-        <form action="">
-            <input type="email" placeholder="Электронная почта">
-            <input type="password" placeholder="Пароль">
+
+        <form method="post">
+            {% csrf_token %}
+            {% if error %}
+            <div style="
+                color:red; display: flex;
+                justify-content: center;
+                padding: 10px;">{{ error }}</div>
+            {% endif %}
+            <input class="sign-form"  type="text" name="username" placeholder="Электронная почта">
+            <input  class="sign-form"  type="password" name="password" placeholder="Пароль">
             <div class="forgot-link">
                 <a href="">Забыли пароль?</a>
             </div>

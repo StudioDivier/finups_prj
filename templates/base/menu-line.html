@@ -6,27 +6,11 @@
 
 
             <ul class="line-menu-items">
+                {% for elem in menu %}
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Тендерные займы</a>
+                    <a class="nav-link" href="#">{{ elem.name_service }}</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Банковские гарантии</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">ГосКредит</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">ГосФакторинг</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Лизинг Онлайн</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Инвестиции</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Страхование</a>
-                </li>
+                {% endfor %}
             </ul>
         </div>
     </div>

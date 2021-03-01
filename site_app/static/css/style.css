@@ -2745,9 +2745,6 @@ footer .studio {
 .create__application .form__create--app form .block-radio input:focus {
   outline: none;
 }
-.create__application .form__create--app form .block-radio input[type=checkbox] {
-  display: none;
-}
 .create__application .form__create--app form .block-radio input[type=checkbox]:checked + label:before {
   content: " ";
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -3121,6 +3118,16 @@ footer .studio {
   .add__person .form-ur {
     width: 40%;
   }
+}
+.add__person .form-ur form button {
+  background-color: #b36326;
+  border: 1px solid #b36326;
+  border-radius: 5px;
+  color: #ffffff;
+  padding: 5px;
+}
+.add__person .form-ur form button:focus {
+  outline: none;
 }
 .add__person .form-ur form .ur-elem {
   margin: 20px 0;
@@ -3520,6 +3527,10 @@ footer .studio {
 .center {
   display: flex;
   justify-content: center;
+}
+
+.sign-form {
+  color: #f9fbfd;
 }
 
 .personal__header .personal__header__item {
@@ -4215,9 +4226,6 @@ footer .studio {
 .create__application .form__create--app form .block-radio input:focus {
   outline: none;
 }
-.create__application .form__create--app form .block-radio input[type=checkbox] {
-  display: none;
-}
 .create__application .form__create--app form .block-radio input[type=checkbox]:checked + label:before {
   content: " ";
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -4591,6 +4599,16 @@ footer .studio {
   .add__person .form-ur {
     width: 40%;
   }
+}
+.add__person .form-ur form button {
+  background-color: #b36326;
+  border: 1px solid #b36326;
+  border-radius: 5px;
+  color: #ffffff;
+  padding: 5px;
+}
+.add__person .form-ur form button:focus {
+  outline: none;
 }
 .add__person .form-ur form .ur-elem {
   margin: 20px 0;

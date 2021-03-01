@@ -162,6 +162,18 @@
 
 
     form {
+      button {
+        background-color: #b36326;
+        border: 1px solid #b36326;
+        border-radius: 5px;
+        color: #ffffff;
+        padding: 5px;
+
+        &:focus {
+            outline: none;
+          }
+      }
+
       .ur-elem {
         margin: 20px 0;
 
@@ -170,18 +182,20 @@
 
         }
 
-        label{
-          width: 100%;
-          span{
-            font-size: 15px;
-          color: #0e1c2d;
-          font-family: "Montserrat-SemiBold", serif;
-          }
-        }
-        select{
+        label {
           width: 100%;
 
-          &:focus{
+          span {
+            font-size: 15px;
+            color: #0e1c2d;
+            font-family: "Montserrat-SemiBold", serif;
+          }
+        }
+
+        select {
+          width: 100%;
+
+          &:focus {
             outline: none;
           }
         }

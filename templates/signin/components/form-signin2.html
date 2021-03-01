@@ -7,7 +7,8 @@
                 <p class="st-tex">Вы можете получать кэшбэк, приобретая услуги для себя, а также зарабатывать, продавая
                     услуги клиентам</p>
             </div>
-            <form class='choice__form' action="">
+            <form class='choice__form' action="" method="post">
+                {% csrf_token %}
                 <div class="sf__choice">
 
                     <label class="sf__agent-client active">

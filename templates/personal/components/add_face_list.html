@@ -14,18 +14,14 @@
         </div>
 
         <div class="form-ur info-tabcontent9 show-tab">
-            <form action="">
+            <form action="" method="post">
+                {% csrf_token %}
                 <div class="ur-elem ur-inn">
                     <input type="text" class="ur-input" name="inn" id="inn" placeholder="ИНН *" required>
                 </div>
+                <button onclick="getData()">Автозаполнение данных комании</button>
                 <div class="ur-elem fiz-form__org">
-                    <label for="form-org">Форма организации
-                        <select class="custom-select" id="form-org">
-                            <option selected>Выбор</option>
-                            <option value="1">ИП</option>
-                            <option value="2">ООО</option>
-                        </select>
-                    </label>
+                    <input type="text" class="ur-input" name="form-org" id="form-org" placeholder="Форма организации">
                 </div>
                 <div class="ur-elem ur-name">
                     <input type="text" class="ur-input" name="name" id="name" placeholder="Название организации">
@@ -37,24 +33,25 @@
                     <input type="tel" class="ur-input" name="ogrn" id="ogrn" placeholder="ОГРН" required>
                 </div>
                 <div class="ur-elem ur-rs">
-                    <input type="email" class="ur-input" name="rs" id="rs" placeholder="Расчетный счет" required>
+                    <input type="text" class="ur-input" name="rs" id="rs" placeholder="Расчетный счет" required>
                 </div>
                 <div class="ur-elem ur-bic">
-                    <input type="email" class="ur-input" name="bic" id="bic" placeholder="БИК" required>
+                    <input type="text" class="ur-input" name="bic" id="bic" placeholder="БИК" required>
                 </div>
+                <button onclick="getBank()">Автозаполнение данных банка</button>
                 <div class="ur-elem ur-bank">
-                    <input type="email" class="ur-input" name="bank" id="bank" placeholder="Наименование банка"
+                    <input type="text" class="ur-input" name="bank" id="bank" placeholder="Наименование банка"
                            required>
                 </div>
                 <div class="ur-elem ur-kr">
-                    <input type="email" class="ur-input" name="kr" id="kr" placeholder="Кор. счет" required>
+                    <input type="text" class="ur-input" name="kr" id="kr" placeholder="Кор. счет" required>
                 </div>
                 <div class="ur-elem ur-gen">
-                    <input type="email" class="ur-input" name="gen" id="gen" placeholder="Генеральный директор (ФИО)"
+                    <input type="text" class="ur-input" name="gen" id="gen" placeholder="Генеральный директор (ФИО)"
                            required>
                 </div>
                 <div class="ur-elem ur-buh">
-                    <input type="email" class="ur-input" name="buh" id="buh" placeholder="Главный бухгалтер (ФИО)"
+                    <input type="text" class="ur-input" name="buh" id="buh" placeholder="Главный бухгалтер (ФИО)"
                            required>
                 </div>
 
@@ -62,7 +59,7 @@
                     <label for="ustav">
                         <span>Устав</span>
 
-                            <input type="file" class="ur-input" name="ustav" id="ustav">
+                        <input type="file" class="ur-input" name="ustav" id="ustav">
                     </label>
                 </div>
 
@@ -70,7 +67,7 @@
                     <label for="ustav">
                         <span>ЕГРЮ/ЕГРИП</span>
 
-                            <input type="file" class="ur-input" name="ustav" id="ustav">
+                        <input type="file" class="ur-input" name="ustav" id="ustav">
                     </label>
                 </div>
 
@@ -78,23 +75,23 @@
                     <label for="ustav">
                         <span>Свидетельство</span>
 
-                            <input type="file" class="ur-input" name="ustav" id="ustav">
+                        <input type="file" class="ur-input" name="ustav" id="ustav">
                     </label>
                 </div>
 
                 <div class="ur-elem ur-ustav file-upload">
                     <label for="ustav">
-                        <span>что-то еще</span>
+                        <span>Решение о назначении генерального директора</span>
 
-                            <input type="file" class="ur-input" name="ustav" id="ustav">
+                        <input type="file" class="ur-input" name="ustav" id="ustav">
                     </label>
                 </div>
 
                 <div class="ur-elem ur-ustav file-upload">
                     <label for="ustav">
-                        <span>Приказ</span>
+                        <span>Приказ о назначении главного бухгалтера</span>
 
-                            <input type="file" class="ur-input" name="ustav" id="ustav">
+                        <input type="file" class="ur-input" name="ustav" id="ustav">
                     </label>
                 </div>
 
@@ -102,7 +99,7 @@
                     <label for="ustav">
                         <span>Баланс за 19' год</span>
 
-                            <input type="file" class="ur-input" name="ustav" id="ustav">
+                        <input type="file" class="ur-input" name="ustav" id="ustav">
                     </label>
                 </div>
 
@@ -110,7 +107,7 @@
                     <label for="ustav">
                         <span>Баланс за 20' год</span>
 
-                            <input type="file" class="ur-input" name="ustav" id="ustav">
+                        <input type="file" class="ur-input" name="ustav" id="ustav">
                     </label>
                 </div>
 
@@ -121,7 +118,8 @@
         </div>
 
         <div class="form-fiz info-tabcontent9 hide-tab">
-            <form action="">
+            <form action="" method="post">
+                {% csrf_token %}
                 <div class="fiz-elem fiz-second__name">
                     <input type="text" class="fiz-input" name="second__name" id="second__name" placeholder="Фамилия *"
                            required>
@@ -188,5 +186,91 @@
             }
         }
     });
+
+</script>
+
+<script>
+    async function fetchDataOrg() {
+        let url = "https://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/party";
+        let token = "4dbffc66f0332287c003b3b667c8ab71a4538f16";
+        let query = String(document.getElementById('inn').value);
+        console.log(query)
+        let options = {
+            method: "POST",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization": "Token " + token
+            },
+            body: JSON.stringify({query: query})
+        }
+        try {
+            const response = await fetch(url, options);
+            const result_data = await response.json();
+            return result_data;
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
+    async function fetchDataBank() {
+        let url = "https://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/bank";
+        let token = "4dbffc66f0332287c003b3b667c8ab71a4538f16";
+        let query = String(document.getElementById('bic').value);
+        console.log(query)
+        let options = {
+            method: "POST",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization": "Token " + token
+            },
+            body: JSON.stringify({query: query})
+        }
+        try {
+            const response = await fetch(url, options);
+            const result_data = await response.json();
+            return result_data;
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
+    async function getData() {
+        const data = await fetchDataOrg();
+        const result_data = data['suggestions'][0]['data'];
+        console.log(result_data);
+
+        let org_form = document.getElementById("form-org");
+        let org_name = document.getElementById("name");
+        let org_kpp = document.getElementById("kpp");
+        let org_ogrn = document.getElementById("ogrn");
+        let org_gen = document.getElementById("gen");
+
+        org_form.value = result_data['opf']['short'];
+        org_name.value = result_data['name']['full'];
+        org_kpp.value = result_data['kpp'];
+        org_ogrn.value = result_data['ogrn'];
+        org_gen.value = result_data['management']['name'];
+    }
+
+    async function getBank() {
+        const data = await fetchDataBank();
+        const result_data = data['suggestions'][0]['data'];
+        console.log(result_data);
+
+        let bank_name = document.getElementById("bank");
+        let bank_kr = document.getElementById("kr");
+
+        bank_name.value = result_data['name']['payment']
+        bank_kr.value = result_data['correspondent_account']
+    }
+
+
+
 
 </script>

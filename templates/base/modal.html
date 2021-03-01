@@ -10,10 +10,18 @@
                 </button>
             </div>
             <div class="modal-body">
+                {% if error %}
+                    <div style="color:red;">{{ error }}</div>
+                {% endif %}
+                {% if thx %}
+                    <div style="color:green;">{{ thx }}</div>
+                {% endif %}
                 <p>Оставьте заявку<br><span>нашему менеджеру</span></p>
-                <form action="">
-                    <input type="text" placeholder="Имя">
-                    <input type="tel" placeholder="Телефон">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="name" placeholder="Имя">
+                    <input type="tel" name="tel" placeholder="Телефон">
+                    <input type="text" name="form_type" value="Модальное окно" style="display: none">
                     <button type="submit">Отрпавить</button>
                 </form>
             </div>

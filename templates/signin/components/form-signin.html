@@ -1,16 +1,19 @@
 {% load static %}
 <section class="form-login">
     <div class="container center">
-        <form class="sign" action="">
-            <input class="sign-form" type="email" placeholder="Электронная почта">
-            <input class="sign-form" type="tel" placeholder="Номер телефона">
-            <input class="sign-form" type="text" placeholder="Имя">
-            <input class="sign-form" type="password" placeholder="Пароль">
-            <input class="sign-form" type="password" placeholder="Повтор пароля">
-            <button class="sign-form" type="submit">Далее</button>
+        <form class="sign" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button onclick="save_data()" class="sign-form" type="submit">Далее</button>
+            <script>
+                function saveData() {
+                    localStorage.email
+                }
+            </script>
+
             <div class="signin-descr sign-form">
                 <p>Нажимая кнопку "Далее" вы соглашаетесь с <a href="">пользовательским соглашением</a>
-и даете согласие на получение информационной рассылки</p>
+                    и даете согласие на получение информационной рассылки</p>
             </div>
         </form>
     </div>
