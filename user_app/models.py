@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 from django.contrib.auth.models import User
 from datetime import datetime
 import uuid
@@ -59,9 +60,9 @@ class ClientsEntity(models.Model):
     org_kpp = models.BigIntegerField(name='org_kpp', verbose_name='КПП')
     org_ogrn = models.BigIntegerField(name='org_ogrn', verbose_name='ОГРН')
     org_r_account = models.BigIntegerField(name='org_r_account', verbose_name='Рассчетный счет')
-    org_bank_bic = models.BigIntegerField(name='org_bank_bic', verbose_name='БИК')
+    org_bank_bic = models.CharField(name='org_bank_bic', verbose_name='БИК', max_length=256)
     org_bank_name = models.CharField(name='org_bank_name', verbose_name='Наименование банка', max_length=128)
-    org_bank_cor_acc = models.BigIntegerField(name='org_bank_cor_acc', verbose_name='Кор.счет')
+    org_bank_cor_acc = models.CharField(name='org_bank_cor_acc', verbose_name='Кор.счет', max_length=256)
     org_gen = models.CharField(name='org_gen', verbose_name='Ген.директор', max_length=128)
     org_buh = models.CharField(name='org_buh', verbose_name='Гл.бухгалтер', max_length=128)
     # files
@@ -75,6 +76,7 @@ class ClientsEntity(models.Model):
     date_request = models.DateTimeField(name='date_request', verbose_name='Дата добавления', default=datetime.now())
 
     owner_id = models.ForeignKey(TypeUser, on_delete=models.CASCADE, verbose_name='Владелец')
+    slug = models.SlugField(unique=True)
 
     class Meta:
         verbose_name = 'Юридическое лицо'
@@ -82,6 +84,9 @@ class ClientsEntity(models.Model):
 
     def __str__(self):
         return str(self.org_form + ' ' + self.org_name)
+
+    def get_absolute_url(self):
+        return reverse('personal:company-detail', kwargs={'slug': self.slug})
 
 
 class ClientsIndividual(models.Model):
@@ -104,6 +109,16 @@ class ClientsIndividual(models.Model):
 
 
 class Applications(models.Model):
+    accept = 'Принято'
+    reject = 'Отклонено'
+    pending = 'На расмотрении'
+    STATUS_LIST = [accept, reject, pending]
+    STATUS_TYPE = [
+        (accept, 'accept'),
+        (reject, 'reject'),
+        (pending, 'pending'),
+    ]
+
     type_service = models.CharField(name='type_service', verbose_name='Вид потребности', max_length=32)
     service = models.CharField(name='service', verbose_name='Потребность', max_length=32)
     company = models.ForeignKey(ClientsEntity, on_delete=models.CASCADE, verbose_name='Компания')
@@ -117,17 +132,18 @@ class Applications(models.Model):
     indisputable_write_off = models.BooleanField(name='indisputable_write_off', verbose_name='Бесспорное списание', default=False)
     date_start = models.DateField(name='date_start', verbose_name='Дата первая', default=datetime.today().strftime('%Y-%m-%d'))
     date_end = models.DateField(name='date_end', verbose_name='Дата вторая', default=datetime.today().strftime('%Y-%m-%d'))
+    date_request = models.DateTimeField(name='date_request', verbose_name='Дата добавления', default=datetime.now())
+
+    status = models.CharField(name='status', verbose_name='Статус заявки', choices=STATUS_TYPE, default=pending, max_length=16)
 
     owner_id = models.ForeignKey(TypeUser, on_delete=models.CASCADE, verbose_name='Владелец')
-
-    #bank = models.ForeignKey(Banks, on_delete=models.CASCADE, null=True, blank=True, verbose_name='Банк')
 
     class Meta:
         verbose_name = 'Заявка'
         verbose_name_plural = 'Заявки'
 
     def __str__(self):
-        return str(str(self.company.org_form) + ' ' + self.company.org_name)
+        return str('Заявка #{} '.format(self.id) + self.owner_id.user.email + ' ' + self.company.org_form + ' ' + self.company.org_name)
 
 
 class Banks(models.Model):
@@ -136,14 +152,25 @@ class Banks(models.Model):
     commission = models.DecimalField(name='commission', verbose_name='Комиссия', decimal_places=2, max_digits=11)
     bank_img = models.ImageField(upload_to=bankFile, verbose_name='Логотип банка')
 
-    app = models.ForeignKey(Applications, on_delete=models.CASCADE, null=True, blank=True, verbose_name='Заявка')
-
     class Meta:
         verbose_name = 'Банк'
         verbose_name_plural = 'Банки'
 
     def __str__(self):
         return str(self.name)
+
+
+class ApplicationsBank(models.Model):
+    user_id = models.ForeignKey(TypeUser, on_delete=models.CASCADE, verbose_name='Ссылка на пользователя')
+    app_id = models.ForeignKey(Applications, on_delete=models.CASCADE, verbose_name='Ссылка на заявку')
+    bank_id = models.ForeignKey(Banks, on_delete=models.CASCADE, verbose_name='Ссылка на подходщий банк')
+
+    class Meta:
+        verbose_name = 'Банк партнер для заявки'
+        verbose_name_plural = 'Банки партнеры для заявок'
+
+    def __str__(self):
+        return str('Банк по заявке №{} для '.format(self.app_id.id) + self.user_id.user.email + ' {} {}'.format(self.app_id.company.org_form, self.app_id.company.org_name))
 
 
 

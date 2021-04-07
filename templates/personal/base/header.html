@@ -36,7 +36,7 @@
 
                     <li class="nav-item personal__header__item">
                         <img src="{% static 'img/personal/admin.png' %}" alt="">
-                        <a class="nav-link" href="/">Администрирование</a>
+                        <a class="nav-link" href="/personal/administration">Администрирование</a>
                     </li>
 
                     <li class="nav-item dropdown personal__header__drop">
@@ -45,7 +45,7 @@
                             {{ user.username }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Мои данные</a>
+                            <a class="dropdown-item" href="/personal/administration">Мои данные</a>
                             <a class="dropdown-item" href="/personal/logout">Выход</a>
                         </div>
                     </li>

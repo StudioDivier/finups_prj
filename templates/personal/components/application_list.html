@@ -2,181 +2,132 @@
 <section class="application__list">
     <div class="container">
         <div class="list__btn">
-            <div class="col-lg-6 list__filter">
+            {% if error %}
+                <div class="col-lg-12 list__app" style="justify-content: center">
+                    <div class="add-app">
+                    <a href="/personal/create-application">
+                        <button>
+                            Добавить заявку
+                            <img src="{% static 'img/personal/add-point.png' %}" alt="">
+                        </button>
+                    </a>
+                </div>
+                </div>
+            {% else %}
+                <div class="col-lg-6 list__filter">
                 <div class="dropdown dropdown-filter">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {% if now_status %}
+                            {{ now_status }}
+                            {% else %}
                         Статус
+                            {% endif %}
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Модерация</a>
-                        <a class="dropdown-item" href="#">Черновик</a>
-                        <a class="dropdown-item" href="#">Принято</a>
-                        <a class="dropdown-item" href="#">Отклонено</a>
+                        {% for elem_x, elem_y in status %}
+
+                            <a class="dropdown-item" href="/personal/applications/{{ elem_y }}">{{ elem_x }}</a>
+
+                        {% endfor %}
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 list__app">
+                <div class="col-lg-6 list__app">
                 <div class="add-app">
-                    <button>
-                        Добавить заявку
-                        <img src="{% static 'img/personal/add-point.png' %}" alt="">
-                    </button>
+                    <a href="/personal/create-application">
+                        <button>
+                            Добавить заявку
+                            <img src="{% static 'img/personal/add-point.png' %}" alt="">
+                        </button>
+                    </a>
                 </div>
             </div>
-        </div>
-
-        <div class="application__table-lg">
-            <div class="table__head">
-                <div class="my-row head__elems">
-                    <div class="my-col-1 head__elem">
-                        <item>№</item>
-                    </div>
-                    <div class="my-col-2 head__elem">
-                        <item>Компания</item>
-                    </div>
-                    <div class="my-col-3 head__elem">
-                        <item>Продукт</item>
-                    </div>
-                    <div class="my-col-4 head__elem">
-                        <item>Сумма</item>
-                    </div>
-                    <div class="my-col-5 head__elem">
-                        <item>Создана</item>
-                    </div>
-                    <div class="my-col-6 head__elem">
-                        <item>Статус</item>
-                    </div>
-                </div>
-                <hr class="border-table">
-            </div>
-            <div class="table__body">
-                <div class="my-row table__elems">
-                    <div class="my-col-1 body__elem">7391</div>
-                    <div class="my-col-2 body__elem">ООО “ПРОСТО ВЕБ”</div>
-                    <div class="my-col-3 body__elem">БГ в пользу налоговых органов</div>
-                    <div class="my-col-4 body__elem summa">1 500 000 ₽</div>
-                    <div class="my-col-5 body__elem">18.01.2021 12:02</div>
-                    <div class="my-col-6 body__elem">Модерация</div>
-                </div>
-
-                <hr class="border-table">
-
-                <div class="my-row table__elems">
-                    <div class="my-col-1 body__elem">7391</div>
-                    <div class="my-col-2 body__elem">ООО “ПРОСТО ВЕБ”</div>
-                    <div class="my-col-3 body__elem">БГ в пользу налоговых органов</div>
-                    <div class="my-col-4 body__elem summa">1 500 000 ₽</div>
-                    <div class="my-col-5 body__elem">18.01.2021 12:02</div>
-                    <div class="my-col-6 body__elem">Модерация</div>
-                </div>
-
-                <hr class="border-table">
-
-                <div class="my-row table__elems">
-                    <div class="my-col-1 body__elem">7391</div>
-                    <div class="my-col-2 body__elem">ООО “ПРОСТО ВЕБ”</div>
-                    <div class="my-col-3 body__elem">БГ в пользу налоговых органов</div>
-                    <div class="my-col-4 body__elem summa">1 500 000 ₽</div>
-                    <div class="my-col-5 body__elem">18.01.2021 12:02</div>
-                    <div class="my-col-6 body__elem">Модерация</div>
-                </div>
-
-                <hr class="border-table">
-
-            </div>
+            {% endif %}
 
         </div>
+        {% if error %}
+            <div class="empty-list">
+            <p>{{ error }}</p>
+            </div>
+        {% else %}
+            <div class="application__table-lg">
+                <div class="table__head">
+                    <div class="my-row head__elems">
+                        <div class="my-col-1 head__elem">
+                            <item>№</item>
+                        </div>
+                        <div class="my-col-2 head__elem">
+                            <item>Компания</item>
+                        </div>
+                        <div class="my-col-3 head__elem">
+                            <item>Продукт</item>
+                        </div>
+                        <div class="my-col-4 head__elem">
+                            <item>Сумма</item>
+                        </div>
+                        <div class="my-col-5 head__elem">
+                            <item>Создана</item>
+                        </div>
+                        <div class="my-col-6 head__elem">
+                            <item>Статус</item>
+                        </div>
+                    </div>
+                    <hr class="border-table">
+                </div>
+                <div class="table__body">
+
+                    {% for elem in apps %}
+                        <div class="my-row table__elems">
+                            <div class="my-col-1 body__elem">{{ elem.id }}</div>
+                            <div class="my-col-2 body__elem">{{ elem.company.org_form }} {{ elem.company.org_name }}</div>
+                            <div class="my-col-3 body__elem">{{ elem.service }}</div>
+                            <div class="my-col-4 body__elem summa">{{ elem.summ }} ₽</div>
+                            <div class="my-col-5 body__elem">{{ elem.date_request }}</div>
+                            <div class="my-col-6 body__elem">{{ elem.status }}</div>
+                        </div>
+                        <hr class="border-table">
+                    {% endfor %}
+
+                </div>
+
+            </div>
+        {% endif %}
 
         <div class="my-row application__table-min">
 
             <div class="table__min-elem ">
-
-                <div class="t__obj">
-                    <div class="t__elem num__section">
-                        <div class="elem__num elem_numer"><p>№</p></div>
+                {% for elem in apps %}
+                    <div class="t__obj">
+                        <div class="t__elem num__section">
+                            <div class="elem__num elem_numer"><p>№</p></div>
+                        </div>
+                        <div class="t__elem num__section">
+                            <div class="elem__num elem_number"><p>{{ elem.id }}</p></div>
+                        </div>
+                        <div class="t__elem elem-company t__elem__value">
+                            <div class="elem__title"><p>Компания</p></div>
+                            <div class="elem__value"><p>{{ elem.company.org_form }} {{ elem.company.org_name }}</p>
+                            </div>
+                        </div>
+                        <div class="t__elem elem-product t__elem__value">
+                            <div class="elem__title"><p>Продукт</p></div>
+                            <div class="elem__value"><p>{{ elem.service }}</p></div>
+                        </div>
+                        <div class="t__elem elem-summa t__elem__value">
+                            <div class="elem__title"><p>Сумма</p></div>
+                            <div class="elem__value"><p>{{ elem.summ }} ₽</p></div>
+                        </div>
+                        <div class="t__elem elem-create t__elem__value">
+                            <div class="elem__title"><p>Создана</p></div>
+                            <div class="elem__value"><p>{{ elem.date_request }}</p></div>
+                        </div>
+                        <div class="t__elem elem-status t__elem__value">
+                            <div class="elem__title"><p>Статус</p></div>
+                            <div class="elem__value"><p>{{ elem.status }}</p></div>
+                        </div>
                     </div>
-                    <div class="t__elem num__section">
-                        <div class="elem__num elem_number"><p>1</p></div>
-                    </div>
-                    <div class="t__elem elem-company t__elem__value">
-                        <div class="elem__title"><p>Компания</p></div>
-                        <div class="elem__value"><p>ООО “ПРОСТО ВЕБ”</p></div>
-                    </div>
-                    <div class="t__elem elem-product t__elem__value">
-                        <div class="elem__title"><p>Продукт</p></div>
-                        <div class="elem__value"><p>БГ в пользу налоговых органов</p></div>
-                    </div>
-                    <div class="t__elem elem-summa t__elem__value">
-                        <div class="elem__title"><p>Сумма</p></div>
-                        <div class="elem__value"><p>1 500 000 ₽</p></div>
-                    </div>
-                    <div class="t__elem elem-create t__elem__value">
-                        <div class="elem__title"><p>Создана</p></div>
-                        <div class="elem__value"><p>18.01.2021 12:02</p></div>
-                    </div>
-                    <div class="t__elem elem-status t__elem__value">
-                        <div class="elem__title"><p>Статус</p></div>
-                        <div class="elem__value"><p>Модерация</p></div>
-                    </div>
-                </div>
-                <div class="t__obj">
-                    <div class="t__elem num__section">
-                        <div class="elem__num elem_numer"><p>№</p></div>
-                    </div>
-                    <div class="t__elem num__section">
-                        <div class="elem__num elem_number"><p>1</p></div>
-                    </div>
-                    <div class="t__elem elem-company t__elem__value">
-                        <div class="elem__title"><p>Компания</p></div>
-                        <div class="elem__value"><p>ООО “ПРОСТО ВЕБ”</p></div>
-                    </div>
-                    <div class="t__elem elem-product t__elem__value">
-                        <div class="elem__title"><p>Продукт</p></div>
-                        <div class="elem__value"><p>БГ в пользу налоговых органов</p></div>
-                    </div>
-                    <div class="t__elem elem-summa t__elem__value">
-                        <div class="elem__title"><p>Сумма</p></div>
-                        <div class="elem__value"><p>1 500 000 ₽</p></div>
-                    </div>
-                    <div class="t__elem elem-create t__elem__value">
-                        <div class="elem__title"><p>Создана</p></div>
-                        <div class="elem__value"><p>18.01.2021 12:02</p></div>
-                    </div>
-                    <div class="t__elem elem-status t__elem__value">
-                        <div class="elem__title"><p>Статус</p></div>
-                        <div class="elem__value"><p>Модерация</p></div>
-                    </div>
-                </div>
-                <div class="t__obj">
-                    <div class="t__elem num__section">
-                        <div class="elem__num elem_numer"><p>№</p></div>
-                    </div>
-                    <div class="t__elem num__section">
-                        <div class="elem__num elem_number"><p>1</p></div>
-                    </div>
-                    <div class="t__elem elem-company t__elem__value">
-                        <div class="elem__title"><p>Компания</p></div>
-                        <div class="elem__value"><p>ООО “ПРОСТО ВЕБ”</p></div>
-                    </div>
-                    <div class="t__elem elem-product t__elem__value">
-                        <div class="elem__title"><p>Продукт</p></div>
-                        <div class="elem__value"><p>БГ в пользу налоговых органов</p></div>
-                    </div>
-                    <div class="t__elem elem-summa t__elem__value">
-                        <div class="elem__title"><p>Сумма</p></div>
-                        <div class="elem__value"><p>1 500 000 ₽</p></div>
-                    </div>
-                    <div class="t__elem elem-create t__elem__value">
-                        <div class="elem__title"><p>Создана</p></div>
-                        <div class="elem__value"><p>18.01.2021 12:02</p></div>
-                    </div>
-                    <div class="t__elem elem-status t__elem__value">
-                        <div class="elem__title"><p>Статус</p></div>
-                        <div class="elem__value"><p>Модерация</p></div>
-                    </div>
-                </div>
-
+                {% endfor %}
             </div>
 
         </div>

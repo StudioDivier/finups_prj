@@ -1,0 +1,48 @@
+{% load static %}
+<section class="personal__config">
+    <div class="container">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="personal_data">
+                <div class="personal_elem">
+                    <label for="">
+                        <span>Имя пользователя</span>
+                        <input type="text" name="username" value="{{ base_user.username }}">
+                    </label>
+                </div>
+                <div class="personal_elem">
+                    <label for="">
+                        <span >Имя</span>
+                        <input type="text" name="first_name" value="{{ base_user.first_name }}">
+                    </label>
+                </div>
+                <div class="personal_elem">
+                    <label for="">
+                        <span>Фамилия</span>
+                        <input type="text" name="last_name" value="{{ base_user.last_name }}">
+                    </label>
+                </div>
+                <div class="personal_elem">
+                    <label for="">
+                        <span>Email пользователя</span>
+                        <input type="email" name="email" value="{{ base_user.email }}">
+                    </label>
+                </div>
+                <div class="personal_elem">
+                    <label for="">
+                        <span>Тип пользователя</span>
+                        <select name="" id="">
+                            <option name="choice" value="{{ main_user.type_user }}" selected>{{ main_user.type_user }}</option>
+                            <option name="choice" value="Клиент">Клиент</option>
+                            <option name="choice" value="Агент">Агент</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="personal_elem link">
+                    <a href="{% url 'personal:change_password' %}">Смена пароля</a>
+                </div>
+            </div>
+            <button type="submit">Готово!</button>
+        </form>
+    </div>
+</section>

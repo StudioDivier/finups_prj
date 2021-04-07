@@ -2315,6 +2315,40 @@ footer .studio {
 .application__list .application__table-lg .table__body .table__elems .summa {
   font-family: "Montserrat-SemiBold", serif;
 }
+.application__list .empty-list {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.application__list .empty-list p {
+  color: #162a43;
+  font-size: 18px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .application__list .empty-list p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 576px) {
+  .application__list .empty-list p {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+@media (max-width: 425px) {
+  .application__list .empty-list p {
+    font-size: 17px;
+    text-align: center;
+  }
+}
+@media (max-width: 375px) {
+  .application__list .empty-list p {
+    font-size: 12px;
+    text-align: center;
+  }
+}
 .application__list .application__table-min {
   margin: 30px 0;
   display: flex;
@@ -2430,6 +2464,40 @@ footer .studio {
 .company_list .my-col-6 {
   width: 33.33%;
 }
+.company_list .empty-list {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.company_list .empty-list p {
+  color: #162a43;
+  font-size: 18px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .company_list .empty-list p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 576px) {
+  .company_list .empty-list p {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+@media (max-width: 425px) {
+  .company_list .empty-list p {
+    font-size: 17px;
+    text-align: center;
+  }
+}
+@media (max-width: 375px) {
+  .company_list .empty-list p {
+    font-size: 12px;
+    text-align: center;
+  }
+}
 .company_list .application__table-lg {
   margin: 30px 0;
 }
@@ -2465,6 +2533,16 @@ footer .studio {
   font-size: 15px;
   font-family: "Montserrat-Medium", serif;
   font-weight: 400;
+}
+.company_list .application__table-lg .table__body .table__elems .body__elem a {
+  color: black;
+}
+.company_list .application__table-lg .table__body .table__elems .body__elem a:hover {
+  color: #162a43;
+  text-decoration: none;
+}
+.company_list .application__table-lg .table__body .table__elems .body__elem a:focus {
+  outline: none;
 }
 .company_list .application__table-lg .table__body .table__elems .summa {
   font-family: "Montserrat-SemiBold", serif;
@@ -2569,6 +2647,40 @@ footer .studio {
   margin-bottom: 0;
 }
 
+.create__application .empty-list {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.create__application .empty-list p {
+  color: #162a43;
+  font-size: 18px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .create__application .empty-list p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 576px) {
+  .create__application .empty-list p {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+@media (max-width: 425px) {
+  .create__application .empty-list p {
+    font-size: 17px;
+    text-align: center;
+  }
+}
+@media (max-width: 375px) {
+  .create__application .empty-list p {
+    font-size: 12px;
+    text-align: center;
+  }
+}
 .create__application .stage-div {
   display: flex;
   padding-bottom: 25px;
@@ -2996,6 +3108,40 @@ footer .studio {
   outline: none;
 }
 
+.add__person .empty-list {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.add__person .empty-list p {
+  color: #162a43;
+  font-size: 18px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .add__person .empty-list p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 576px) {
+  .add__person .empty-list p {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+@media (max-width: 425px) {
+  .add__person .empty-list p {
+    font-size: 17px;
+    text-align: center;
+  }
+}
+@media (max-width: 375px) {
+  .add__person .empty-list p {
+    font-size: 12px;
+    text-align: center;
+  }
+}
 .add__person .choice-person {
   display: flex;
 }
@@ -3143,6 +3289,12 @@ footer .studio {
   color: #0e1c2d;
   font-family: "Montserrat-SemiBold", serif;
 }
+.add__person .form-ur form .ur-elem label .file__check {
+  font-family: "Montserrat-Regular", serif;
+}
+.add__person .form-ur form .ur-elem label a {
+  color: #162a43;
+}
 .add__person .form-ur form .ur-elem select {
   width: 100%;
 }
@@ -3177,6 +3329,92 @@ footer .studio {
   color: #ffffff;
 }
 .add__person .form-ur form .btn-row button:focus {
+  outline: none;
+}
+
+.personal__config .personal_data .personal_elem label {
+  display: flex;
+  flex-direction: column;
+}
+.personal__config .personal_data .personal_elem label span {
+  font-size: 15px;
+  color: #0e1c2d;
+  font-family: "Montserrat-SemiBold", serif;
+}
+.personal__config .personal_data .personal_elem label input {
+  width: 50%;
+  margin-top: 5px;
+  padding: 10px 15px;
+  border: 1px solid #dde1e4;
+  border-radius: 5px;
+}
+.personal__config .personal_data .personal_elem label input:focus {
+  outline: none;
+}
+.personal__config .personal_data .personal_elem label select {
+  width: 50%;
+  margin-top: 5px;
+  padding: 10px 15px;
+  border: 1px solid #dde1e4;
+  border-radius: 5px;
+}
+.personal__config .personal_data .link {
+  padding: 10px 0;
+}
+.personal__config .personal_data .link a {
+  font-size: 15px;
+  color: #0e1c2d;
+  font-family: "Montserrat-SemiBold", serif;
+}
+.personal__config .personal_data .link a:hover {
+  color: #b36326;
+  text-decoration: none;
+}
+.personal__config .personal_data .link a:focus {
+  outline: none;
+}
+.personal__config button {
+  width: 50%;
+  padding: 15px 80px;
+  background-color: #b36326;
+  border: 1px solid #b36326;
+  border-radius: 5px;
+  color: #ffffff;
+}
+.personal__config button:focus {
+  outline: none;
+}
+
+.personal__title .title__text p a {
+  color: #0e1c2d;
+}
+.personal__title .title__text p a:hover {
+  color: #b36326;
+  text-decoration: none;
+}
+.personal__title .title__text p a:focus {
+  outline: none;
+}
+
+.change-pass form p label {
+  font-size: 15px;
+  color: #0e1c2d;
+  font-family: "Montserrat-SemiBold", serif;
+}
+.change-pass form p input {
+  margin-top: 5px;
+  padding: 10px 15px;
+  border: 1px solid #dde1e4;
+  border-radius: 5px;
+}
+.change-pass form button {
+  padding: 15px 80px;
+  background-color: #b36326;
+  border: 1px solid #b36326;
+  border-radius: 5px;
+  color: #ffffff;
+}
+.change-pass form button:focus {
   outline: none;
 }
 
@@ -3524,6 +3762,53 @@ footer .studio {
   }
 }
 
+.form-login .reset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-login .reset h2 {
+  color: #f9fbfd;
+}
+.form-login .reset h3 {
+  color: #f9fbfd;
+}
+.form-login .reset a {
+  color: #f9fbfd;
+}
+.form-login .reset a:hover {
+  color: #b36326;
+  text-decoration: none;
+}
+.form-login .reset a:focus {
+  outline: none;
+}
+.form-login .reset form p label {
+  font-size: 15px;
+  color: #f9fbfd;
+  font-family: "Montserrat-SemiBold", serif;
+}
+.form-login .reset form p input {
+  margin-top: 5px;
+  padding: 10px 15px;
+  border: 1px solid #dde1e4;
+  border-radius: 5px;
+}
+.form-login .reset form p input::placeholder {
+  color: #f9fbfd;
+}
+.form-login .reset p {
+  font-size: 18px;
+  color: #f9fbfd;
+  font-family: "Montserrat-SemiBold", serif;
+}
+.form-login .confirmpass form {
+  background-image: none !important;
+}
+.form-login .confirmpass form ul {
+  color: #f9fbfd !important;
+}
+
 .center {
   display: flex;
   justify-content: center;
@@ -3796,6 +4081,40 @@ footer .studio {
 .application__list .application__table-lg .table__body .table__elems .summa {
   font-family: "Montserrat-SemiBold", serif;
 }
+.application__list .empty-list {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.application__list .empty-list p {
+  color: #162a43;
+  font-size: 18px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .application__list .empty-list p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 576px) {
+  .application__list .empty-list p {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+@media (max-width: 425px) {
+  .application__list .empty-list p {
+    font-size: 17px;
+    text-align: center;
+  }
+}
+@media (max-width: 375px) {
+  .application__list .empty-list p {
+    font-size: 12px;
+    text-align: center;
+  }
+}
 .application__list .application__table-min {
   margin: 30px 0;
   display: flex;
@@ -3911,6 +4230,40 @@ footer .studio {
 .company_list .my-col-6 {
   width: 33.33%;
 }
+.company_list .empty-list {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.company_list .empty-list p {
+  color: #162a43;
+  font-size: 18px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .company_list .empty-list p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 576px) {
+  .company_list .empty-list p {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+@media (max-width: 425px) {
+  .company_list .empty-list p {
+    font-size: 17px;
+    text-align: center;
+  }
+}
+@media (max-width: 375px) {
+  .company_list .empty-list p {
+    font-size: 12px;
+    text-align: center;
+  }
+}
 .company_list .application__table-lg {
   margin: 30px 0;
 }
@@ -3946,6 +4299,16 @@ footer .studio {
   font-size: 15px;
   font-family: "Montserrat-Medium", serif;
   font-weight: 400;
+}
+.company_list .application__table-lg .table__body .table__elems .body__elem a {
+  color: black;
+}
+.company_list .application__table-lg .table__body .table__elems .body__elem a:hover {
+  color: #162a43;
+  text-decoration: none;
+}
+.company_list .application__table-lg .table__body .table__elems .body__elem a:focus {
+  outline: none;
 }
 .company_list .application__table-lg .table__body .table__elems .summa {
   font-family: "Montserrat-SemiBold", serif;
@@ -4050,6 +4413,40 @@ footer .studio {
   margin-bottom: 0;
 }
 
+.create__application .empty-list {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.create__application .empty-list p {
+  color: #162a43;
+  font-size: 18px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .create__application .empty-list p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 576px) {
+  .create__application .empty-list p {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+@media (max-width: 425px) {
+  .create__application .empty-list p {
+    font-size: 17px;
+    text-align: center;
+  }
+}
+@media (max-width: 375px) {
+  .create__application .empty-list p {
+    font-size: 12px;
+    text-align: center;
+  }
+}
 .create__application .stage-div {
   display: flex;
   padding-bottom: 25px;
@@ -4477,6 +4874,40 @@ footer .studio {
   outline: none;
 }
 
+.add__person .empty-list {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.add__person .empty-list p {
+  color: #162a43;
+  font-size: 18px;
+  font-family: "Montserrat-Medium", serif;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .add__person .empty-list p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 576px) {
+  .add__person .empty-list p {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+@media (max-width: 425px) {
+  .add__person .empty-list p {
+    font-size: 17px;
+    text-align: center;
+  }
+}
+@media (max-width: 375px) {
+  .add__person .empty-list p {
+    font-size: 12px;
+    text-align: center;
+  }
+}
 .add__person .choice-person {
   display: flex;
 }
@@ -4624,6 +5055,12 @@ footer .studio {
   color: #0e1c2d;
   font-family: "Montserrat-SemiBold", serif;
 }
+.add__person .form-ur form .ur-elem label .file__check {
+  font-family: "Montserrat-Regular", serif;
+}
+.add__person .form-ur form .ur-elem label a {
+  color: #162a43;
+}
 .add__person .form-ur form .ur-elem select {
   width: 100%;
 }
@@ -4658,5 +5095,91 @@ footer .studio {
   color: #ffffff;
 }
 .add__person .form-ur form .btn-row button:focus {
+  outline: none;
+}
+
+.personal__config .personal_data .personal_elem label {
+  display: flex;
+  flex-direction: column;
+}
+.personal__config .personal_data .personal_elem label span {
+  font-size: 15px;
+  color: #0e1c2d;
+  font-family: "Montserrat-SemiBold", serif;
+}
+.personal__config .personal_data .personal_elem label input {
+  width: 50%;
+  margin-top: 5px;
+  padding: 10px 15px;
+  border: 1px solid #dde1e4;
+  border-radius: 5px;
+}
+.personal__config .personal_data .personal_elem label input:focus {
+  outline: none;
+}
+.personal__config .personal_data .personal_elem label select {
+  width: 50%;
+  margin-top: 5px;
+  padding: 10px 15px;
+  border: 1px solid #dde1e4;
+  border-radius: 5px;
+}
+.personal__config .personal_data .link {
+  padding: 10px 0;
+}
+.personal__config .personal_data .link a {
+  font-size: 15px;
+  color: #0e1c2d;
+  font-family: "Montserrat-SemiBold", serif;
+}
+.personal__config .personal_data .link a:hover {
+  color: #b36326;
+  text-decoration: none;
+}
+.personal__config .personal_data .link a:focus {
+  outline: none;
+}
+.personal__config button {
+  width: 50%;
+  padding: 15px 80px;
+  background-color: #b36326;
+  border: 1px solid #b36326;
+  border-radius: 5px;
+  color: #ffffff;
+}
+.personal__config button:focus {
+  outline: none;
+}
+
+.personal__title .title__text p a {
+  color: #0e1c2d;
+}
+.personal__title .title__text p a:hover {
+  color: #b36326;
+  text-decoration: none;
+}
+.personal__title .title__text p a:focus {
+  outline: none;
+}
+
+.change-pass form p label {
+  font-size: 15px;
+  color: #0e1c2d;
+  font-family: "Montserrat-SemiBold", serif;
+}
+.change-pass form p input {
+  margin-top: 5px;
+  padding: 10px 15px;
+  border: 1px solid #dde1e4;
+  border-radius: 5px;
+}
+.change-pass form button {
+  padding: 15px 80px;
+  background-color: #b36326;
+  border: 1px solid #b36326;
+  border-radius: 5px;
+  color: #ffffff;
+}
+.change-pass form button:focus {
   outline: none;
 }

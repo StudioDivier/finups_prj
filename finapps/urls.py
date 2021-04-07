@@ -20,6 +20,8 @@ from django.conf.urls.static import static
 from django.urls import include
 
 
+app_name = 'main'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('site_app.urls')),

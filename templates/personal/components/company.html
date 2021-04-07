@@ -1,0 +1,152 @@
+{% load static %}
+<section class="add__person">
+    <div class="container">
+        <div class="form-ur">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="ur-elem ur-inn">
+                    <input type="text" class="ur-input" name="inn" id="inn" placeholder="ИНН *"
+                           value="{{ company.org_inn }}">
+                </div>
+                <div class="ur-elem fiz-form__org">
+                    <input type="text" class="ur-input" name="form-org" id="form-org"
+                           placeholder="Форма организации" value="{{ company.org_form }}">
+                </div>
+                <div class="ur-elem ur-name">
+                    <input type="text" class="ur-input" name="name" id="name" placeholder="Название организации"
+                           value="{{ company.org_name }}">
+                </div>
+                <div class="ur-elem ur-kpp">
+                    <input type="text" class="ur-input" name="kpp" id="kpp" placeholder="КПП"
+                           value="{{ company.org_kpp }}">
+                </div>
+                <div class="ur-elem ur-ogrn">
+                    <input type="tel" class="ur-input" name="ogrn" id="ogrn" placeholder="ОГРН"
+                           value="{{ company.org_ogrn }}">
+                </div>
+                <div class="ur-elem ur-rs">
+                    <input type="text" class="ur-input" name="rs" id="rs" placeholder="Расчетный счет"
+                           value="{{ company.org_r_account }}">
+                </div>
+                <div class="ur-elem ur-bic">
+                    <input type="text" class="ur-input" name="bic" id="bic" placeholder="БИК"
+                           value="{{ company.org_bank_bic }}">
+                </div>
+
+                <div class="ur-elem ur-bank">
+                    <input type="text" class="ur-input" name="bank" id="bank" placeholder="Наименование банка"
+                           value="{{ company.org_bank_name }}"
+                           required>
+                </div>
+                <div class="ur-elem ur-kr">
+                    <input type="text" class="ur-input" name="kr" id="kr" placeholder="Кор. счет"
+                           value="{{ company.org_bank_cor_acc }}">
+                </div>
+                <div class="ur-elem ur-gen">
+                    <input type="text" class="ur-input" name="gen" id="gen" placeholder="Генеральный директор (ФИО)"
+                           value="{{ company.org_gen }}">
+                </div>
+                <div class="ur-elem ur-buh">
+                    <input type="text" class="ur-input" name="buh" id="buh" placeholder="Главный бухгалтер (ФИО)"
+                           value="{{ company.org_buh }}">
+                </div>
+
+                <div class="ur-elem ur-ustav file-upload">
+                    <label for="ustav">
+                        <span>Устав</span>
+                        {% if company.charter %}
+                            <p><span class="file__check">Заменить</span> /
+                                <span><a href="{{ company.charter.url }}" download>Скачать</a></span></p>
+                        {% else %}
+                            <p><span class="file__check">Файл еще не загружен</span></p>
+                        {% endif %}
+                        <input type="file" class="ur-input" name="charter">
+                    </label>
+
+                </div>
+
+                <div class="ur-elem ur-ustav file-upload">
+                    <label for="ustav">
+                        <span>ЕГРЮ/ЕГРИП</span>
+                        {% if company.egru %}
+                            <p><span class="file__check">Заменить</span> /
+                                <span><a href="{{ company.egru.url }}" download>Скачать</a></span></p>
+                        {% else %}
+                            <p><span class="file__check">Файл еще не загружен</span></p>
+                        {% endif %}
+                        <input type="file" class="ur-input" name="egru">
+                    </label>
+                </div>
+
+                <div class="ur-elem ur-ustav file-upload">
+                    <label for="ustav">
+                        <span>Свидетельство</span>
+                        {% if company.certificate %}
+                            <p><span class="file__check">Заменить</span> /
+                                <span><a href="{{ company.certificate.url }}" download>Скачать</a></span></p>
+                        {% else %}
+                            <p><span class="file__check">Файл еще не загружен</span></p>
+                        {% endif %}
+                        <input type="file" class="ur-input" name="certificate">
+                    </label>
+                </div>
+
+                <div class="ur-elem ur-ustav file-upload">
+                    <label for="ustav">
+                        <span>Решение о назначении генерального директора</span>
+                        {% if company.gen %}
+                            <p><span class="file__check">Заменить</span> /
+                                <span><a href="{{ company.gen.url }}" download>Скачать</a></span></p>
+                        {% else %}
+                            <p><span class="file__check">Файл еще не загружен</span></p>
+                        {% endif %}
+                        <input type="file" class="ur-input" name="gen-doc">
+                    </label>
+                </div>
+
+                <div class="ur-elem ur-ustav file-upload">
+                    <label for="ustav">
+                        <span>Приказ о назначении главного бухгалтера</span>
+                        {% if company.buh %}
+                            <p><span class="file__check">Заменить</span> /
+                                <span><a href="{{ company.buh.url }}" download>Скачать</a></span></p>
+                        {% else %}
+                            <p><span class="file__check">Файл еще не загружен</span></p>
+                        {% endif %}
+                        <input type="file" class="ur-input" name="buh-doc">
+                    </label>
+                </div>
+
+                <div class="ur-elem ur-ustav file-upload">
+                    <label for="ustav">
+                        <span>Баланс за 19' год</span>
+                        {% if company.bal19 %}
+                            <p><span class="file__check">Заменить</span> /
+                                <span><a href="{{ company.bal19.url }}" download>Скачать</a></span></p>
+                        {% else %}
+                            <p><span class="file__check">Файл еще не загружен</span></p>
+                        {% endif %}
+                        <input type="file" class="ur-input" name="bal19">
+                    </label>
+                </div>
+
+                <div class="ur-elem ur-ustav file-upload">
+                    <label for="ustav">
+                        <span>Баланс за 20' год</span>
+                        {% if company.bal20 %}
+                            <p><span class="file__check">Заменить</span> /
+                                <span><a href="{{ company.bal20.url }}" download>Скачать</a></span></p>
+                        {% else %}
+                            <p><span class="file__check">Файл еще не загружен</span></p>
+                        {% endif %}
+                        <input type="file" class="ur-input" name="bal20">
+                    </label>
+                </div>
+
+                <div class="btn-row">
+                    <button type="submit">Подтвердить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

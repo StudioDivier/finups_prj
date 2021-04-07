@@ -1,0 +1,10 @@
+{% extends "personal/base/base.html" %}
+{% load static %}
+{% block title %}FINUPS - Кабинет{% endblock %}
+{% block personal__title %}Компания {{company.org_form}} "{{company.org_name}}"{% endblock %}
+
+{% block content %}
+
+    {% include 'personal/components/company.html' %}
+
+{% endblock %}

@@ -1,0 +1,73 @@
+@import "../../common/screen";
+@import "../../common/colors";
+@import "../../common/mixins";
+
+.personal__config {
+  .personal_data {
+    .personal_elem {
+      label {
+        display: flex;
+        flex-direction: column;
+
+        span {
+          font-size: 15px;
+          color: #0e1c2d;
+          font-family: "Montserrat-SemiBold", serif;
+        }
+
+        input {
+          width: 50%;
+          margin-top: 5px;
+          padding: 10px 15px;
+          border: 1px solid #dde1e4;
+          border-radius: 5px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        select {
+          width: 50%;
+          margin-top: 5px;
+          padding: 10px 15px;
+          border: 1px solid #dde1e4;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .link {
+      padding: 10px 0;
+
+      a {
+        font-size: 15px;
+        color: #0e1c2d;
+        font-family: "Montserrat-SemiBold", serif;
+
+      }
+
+      a:hover {
+        color: $gold;
+        text-decoration: none;
+      }
+
+      a:focus {
+        outline: none;
+      }
+    }
+  }
+
+  button {
+    width: 50%;
+    padding: 15px 80px;
+    background-color: $gold;
+    border: 1px solid $gold;
+    border-radius: 5px;
+    color: #ffffff;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

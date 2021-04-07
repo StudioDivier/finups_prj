@@ -22,13 +22,35 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config.G_SK
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
+# SECURITY WARNING: keep the secret key used in production secret!
+if DEBUG:
+    SECRET_KEY = config.G_SK
+
+    EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+    EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
+
+    GOOGLE_RECAPTCHA_SECRET_KEY = '6LdbWY8aAAAAANymLlscXb7_eYyN0gbe4oOnCuB2'
+
+    ALLOWED_HOSTS = []
+else:
+    SECRET_KEY = os.getenv('SECRET_KEY')
+
+    EMAIL_USE_TLS = True
+    EMAIL_HOST = 'smtp.yandex.ru'
+    EMAIL_PORT = '587'
+    EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+
+    GOOGLE_RECAPTCHA_SECRET_KEY = os.getenv('RECAPTCHA_SECRET_KEY')
+
+    ALLOWED_HOSTS = ['www.domain.com']
+
+DATA_UPLOAD_MAX_MEMORY_SIZE = 15728640
 
 # Application definition
 
@@ -135,3 +157,4 @@ STATIC_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+

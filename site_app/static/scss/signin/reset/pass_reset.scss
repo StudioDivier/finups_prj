@@ -1,0 +1,68 @@
+@import "../../common/screen";
+@import "../../common/colors";
+
+.form-login {
+  .reset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      color: $back_grey;
+    }
+
+    h3 {
+      color: $back_grey;
+    }
+
+    a {
+      color: $back_grey;
+    }
+
+    a:hover {
+      color: $gold;
+      text-decoration: none;
+    }
+
+    a:focus {
+      outline: none;
+    }
+
+    form {
+      p {
+        label {
+          font-size: 15px;
+          color: $back_grey;
+          font-family: "Montserrat-SemiBold", serif;
+        }
+
+        input {
+          margin-top: 5px;
+          padding: 10px 15px;
+          border: 1px solid #dde1e4;
+          border-radius: 5px;
+        }
+
+        input::placeholder {
+          color: $back_grey;
+        }
+      }
+    }
+
+    p {
+      font-size: 18px;
+      color: $back_grey;
+      font-family: "Montserrat-SemiBold", serif;
+    }
+  }
+
+  .confirmpass{
+    form{
+      background-image: none!important;
+
+      ul{
+        color: $back_grey!important;
+      }
+    }
+  }
+}

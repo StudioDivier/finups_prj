@@ -1,139 +1,146 @@
 {% load static %}
 <section class="create__application">
     <div class="container">
-        <div class="stage-div">
-            <div class="point-one">
-                <div class="circle orange">01</div>
-                <p>Информация</p>
+        {% if error %}
+            <div class="empty-list">
+                <p>{{ error }}</p>
             </div>
-            <div class="line">
-                <hr class="razdel">
+        {% else %}
+            <div class="stage-div">
+                <div class="point-one">
+                    <div class="circle orange">01</div>
+                    <p>Информация</p>
+                </div>
+                <div class="line">
+                    <hr class="razdel">
+                </div>
+                <div class="point-one">
+                    <div class="circle grey">02</div>
+                    <p>Выбор партнеров</p>
+                </div>
             </div>
-            <div class="point-one">
-                <div class="circle grey">02</div>
-                <p>Выбор партнеров</p>
-            </div>
-        </div>
-        <div class="form__create--app">
-            <form action="" method="post">
-            {% csrf_token %}
-                <div class="my-row">
-                    <div class="block-50">
-                        Вид потребности
-                        <select class="custom-select" name="type_service" id="class_serv">
-                        <option value="">--</option>
-                            {% for elem_class in serv_list %}
-                                <option value="{{ elem_class.name_service }}">{{ elem_class.name_service }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="block-50">
-                        Потребность
-                            <select class="custom-select" name="service" id="type_serv">
-                            <option value="">--</option>
-                                    {% for elem_class in serv_list %}
-                                        {% for elem in serv %}
-                                            {% if elem.type_service_id == elem_class.id %}
-                                                <option value="{{elem.name_service}}" data-chained="{{ elem_class.name_service }}">{{elem.name_service}}</option>
-                                            {% endif %}
-                                        {% endfor %}
-                                    {% endfor %}
+            <div class="form__create--app">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="my-row">
+                        <div class="block-50">
+                            Вид потребности
+                            <select class="custom-select" name="type_service" id="class_serv">
+                                <option value="">--</option>
+                                {% for elem_class in serv_list %}
+                                    <option value="{{ elem_class.name_service }}">{{ elem_class.name_service }}</option>
+                                {% endfor %}
                             </select>
+                        </div>
+                        <div class="block-50">
+                            Потребность
+                            <select class="custom-select" name="service" id="type_serv">
+                                <option value="">--</option>
+                                {% for elem_class in serv_list %}
+                                    {% for elem in serv %}
+                                        {% if elem.type_service_id == elem_class.id %}
+                                            <option value="{{ elem.name_service }}"
+                                                    data-chained="{{ elem_class.name_service }}">{{ elem.name_service }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endfor %}
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="my-row">
-                    <div class="block-50">
-                        Компания
-                        <select class="custom-select" name='company' id="inputGroupSelect01">
-                            <option value="">--</option>
-                            {% for elem in companies %}
-                            <option value="{{ elem.org_form }} {{ elem.org_name }}">{{ elem.org_form }} {{ elem.org_name }}</option>
-                            {% endfor %}
-                        </select>
+                    <div class="my-row">
+                        <div class="block-50">
+                            Компания
+                            <select class="custom-select" name='company' id="inputGroupSelect01">
+                                <option value="">--</option>
+                                {% for elem in companies %}
+                                    <option value="{{ elem.org_form }} {{ elem.org_name }}">{{ elem.org_form }} {{ elem.org_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="block-50 company_new">
+                            <a href="/personal/add-company" class="add-company">
+                                <button>Добавить новую компанию</button>
+                            </a>
+                        </div>
                     </div>
-                    <div class="block-50 company_new">
-                        <a href="/personal/add-company" class="add-company">
-                            <button>Добавить новую компанию</button>
-                        </a>
+
+                    <div class="my-row left">
+                        <div class="block-50">
+                            Закон
+                            <select class="custom-select" name="zakon" id="inputGroupSelect01">
+                                <option value="">--</option>
+                                <option value="44 ФЗ">44 ФЗ</option>
+                                <option value="223 ФЗ">223 ФЗ</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
 
-                <div class="my-row left">
-                    <div class="block-50">
-                        Закон
-                        <select class="custom-select" name="zakon" id="inputGroupSelect01">
-                            <option value="">--</option>
-                            <option value="44 ФЗ">44 ФЗ</option>
-                            <option value="223 ФЗ">223 ФЗ</option>
-                        </select>
+                    <div class="my-row left">
+                        <div class="block-50">
+                            <input type="text" name="purchase_number" placeholder="Номер закупки">
+                        </div>
                     </div>
-                </div>
 
-                <div class="my-row left">
-                    <div class="block-50">
-                        <input type="text" name="purchase_number" placeholder="Номер закупки">
+                    <div class="my-row left">
+                        <div class="block-50">
+                            <input type="text" name="summ" placeholder="Сумма">
+                        </div>
                     </div>
-                </div>
 
-                <div class="my-row left">
-                    <div class="block-50">
-                        <input type="text" name="summ" placeholder="Сумма">
+                    <div class="my-row">
+                        <div class="block-50">
+
+                            <input type="text" name="contract_price" placeholder="Цена контракта">
+                        </div>
                     </div>
-                </div>
 
-                <div class="my-row">
-                    <div class="block-50">
+                    <div class="my-row">
+                        <div class="block-100">
 
-                        <input type="text" name="contract_price" placeholder="Цена контракта">
+                            <input type="text" name="subj_contract" placeholder="Предмет контракта">
+                        </div>
                     </div>
-                </div>
 
-                <div class="my-row">
-                    <div class="block-100">
+                    <div class="my-row">
+                        <div class="block-100">
 
-                        <input type="text" name="subj_contract" placeholder="Предмет контракта">
+                            <input type="text" name="text_contract" placeholder="Предназначение контракта">
+                        </div>
                     </div>
-                </div>
 
-                <div class="my-row">
-                    <div class="block-100">
-
-                        <input type="text" name="text_contract" placeholder="Предназначение контракта">
+                    <div class="my-row">
+                        <div class="block-50 block-radio">
+                            <label for="">
+                                <input type="checkbox" name="prepaid_expense">
+                                <span>Аванс</span>
+                            </label>
+                        </div>
+                        <div class="block-50 block-radio">
+                            <label for="">
+                                <input type="checkbox" name="indisputable_write_off">
+                                <span>Бесспорное списание</span>
+                            </label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="my-row">
-                    <div class="block-50 block-radio">
-                        <label for="">
-                            <input type="checkbox" name="prepaid_expense">
-                            <span>Аванс</span>
-                        </label>
+                    <div class="my-row">
+                        <div class="block-50">
+
+                            <input type="date" name="date_start" placeholder="Дата протокола">
+                        </div>
+                        <div class="block-50">
+
+                            <input type="date" name="date_end" placeholder="Дата извещения">
+                        </div>
                     </div>
-                    <div class="block-50 block-radio">
-                        <label for="">
-                            <input type="checkbox" name="indisputable_write_off">
-                            <span>Бесспорное списание</span>
-                        </label>
+
+
+                    <div class="btn-row">
+                        <button>Далее</button>
                     </div>
-                </div>
-
-                <div class="my-row">
-                    <div class="block-50">
-
-                        <input type="date" name="date_start" placeholder="Дата протокола">
-                    </div>
-                    <div class="block-50">
-
-                        <input type="date" name="date_end" placeholder="Дата извещения">
-                    </div>
-                </div>
-
-
-                <div class="btn-row">
-                    <button>Далее</button>
-                </div>
-            </form>
-        </div>
+                </form>
+            </div>
+        {% endif %}
     </div>
 </section>
 

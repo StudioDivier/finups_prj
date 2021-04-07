@@ -13,7 +13,7 @@
             <input class="sign-form"  type="text" name="username" placeholder="Электронная почта">
             <input  class="sign-form"  type="password" name="password" placeholder="Пароль">
             <div class="forgot-link">
-                <a href="">Забыли пароль?</a>
+                <a href="{% url 'personal:password_reset' %}">Забыли пароль?</a>
             </div>
             <button type="submit">Далее</button>
         </form>

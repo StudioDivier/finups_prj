@@ -13,17 +13,23 @@ class IndividualAdmin(admin.StackedInline):
     model = models.ClientsIndividual
 
 
-class ApplicationsAdmin(admin.StackedInline):
-    model = models.Applications
+class ApplicationsBankAdmin(admin.StackedInline):
+    model = models.ApplicationsBank
+
+
+@admin.register(models.Applications)
+class ApplicationsAdmin(admin.ModelAdmin):
+    inlines = [ApplicationsBankAdmin, ]
 
 
 @admin.register(models.TypeUser)
 class UserAdmin(admin.ModelAdmin):
-    inlines = [ApplicationsAdmin, EntityAdmin, IndividualAdmin, ]
+    inlines = [EntityAdmin, IndividualAdmin, ]
     list_display = ('user', 'type_user', )
 
 
 admin.site.register(models.Banks)
 admin.site.register(models.ClientsEntity)
 admin.site.register(models.ClientsIndividual)
-admin.site.register(models.Applications)
+# admin.site.register(models.Applications)
+admin.site.register(models.ApplicationsBank)

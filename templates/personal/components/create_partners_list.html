@@ -14,12 +14,12 @@
             </div>
             <div class="form-choice__partners">
                 <form action="" method="post">
-                {% csrf_token %}
+                    {% csrf_token %}
                     <div class="area__choice">
                         <div class="table-head">
                             <div class="my-row head-value">
                                 <div class="my-col-1">
-                                    <input type="checkbox" class="custom-checkbox">
+                                    <input type="checkbox" class="custom-checkbox" onClick="toggle(this)">
                                 </div>
                                 <div class="my-col-7">
                                     <span>Партнер</span>
@@ -42,22 +42,23 @@
                         </div>
                         <div class="table-body">
                             {% for bank in banks %}
-                            <div class="my-row body-value">
-                                <div class="my-col-1">
-                                    <input type="checkbox" class="custom-checkbox" name="bank_choice" value="{{ bank.name }}">
-                                </div>
-                                <div class="my-col-7">
-                                    <div class="part-img">
-                                        <img src="{{ bank.bank_img.url }}" alt="{{ bank.name }}">
+                                <div class="my-row body-value">
+                                    <div class="my-col-1">
+                                        <input type="checkbox" class="input-lg custom-checkbox" name="{{ bank.name }}"
+                                               value="{{ bank.name }}">
                                     </div>
-                                    <span>{{ bank.name }}</span>
+                                    <div class="my-col-7">
+                                        <div class="part-img">
+                                            <img src="{{ bank.bank_img.url }}" alt="{{ bank.name }}">
+                                        </div>
+                                        <span>{{ bank.name }}</span>
+                                    </div>
+                                    <div class="my-col-5"><span>{{ bank.cost }}</span></div>
+                                    <div class="my-col-5"><span>{{ bank.commission }}</span></div>
                                 </div>
-                                <div class="my-col-5"><span>{{ bank.cost }}</span></div>
-                                <div class="my-col-5"><span>{{ bank.commission }}</span></div>
-                            </div>
-                            <div class="line">
-                                <hr class="razdel">
-                            </div>
+                                <div class="line">
+                                    <hr class="razdel">
+                                </div>
                             {% endfor %}
                         </div>
                     </div>
@@ -73,34 +74,34 @@
                     <form action="" method="post">
                         {% csrf_token %}
                         {% for bank in banks %}
-                        <label class="partner-elem" for="part{{ bank.id }}">
-                            <input type="checkbox" name="{{ bank.name }}" id="part{{ bank.id }}">
-                            <div class="t__obj">
-                                <div class="t__elem num__section">
-                                    <div class="elem__num elem_numer"><p>№</p></div>
-                                </div>
-                                <div class="t__elem num__section">
-                                    <div class="elem__num elem_number">{{ bank.id }}</div>
-                                </div>
-                                <div class="t__elem elem-company t__elem__value">
-                                    <div class="elem__title"><p>Партнер</p></div>
-                                    <div class="elem__value">
-                                        <div class="part-img">
-                                            <img src="{{ bank.bank_img.url }}" alt="{{ bank.name }}">
+                            <label class="partner-elem" for="part{{ bank.id }}">
+                                <input type="checkbox" name="{{ bank.name }}" id="part{{ bank.id }}">
+                                <div class="t__obj">
+                                    <div class="t__elem num__section">
+                                        <div class="elem__num elem_numer"><p>№</p></div>
+                                    </div>
+                                    <div class="t__elem num__section">
+                                        <div class="elem__num elem_number">{{ bank.id }}</div>
+                                    </div>
+                                    <div class="t__elem elem-company t__elem__value">
+                                        <div class="elem__title"><p>Партнер</p></div>
+                                        <div class="elem__value">
+                                            <div class="part-img">
+                                                <img src="{{ bank.bank_img.url }}" alt="{{ bank.name }}">
+                                            </div>
+                                            <p>{{ bank.name }}</p>
                                         </div>
-                                        <p>{{ bank.name }}</p>
+                                    </div>
+                                    <div class="t__elem elem-product t__elem__value">
+                                        <div class="elem__title"><p>Стоимость (₽)</p></div>
+                                        <div class="elem__value"><p>{{ bank.cost }}</p></div>
+                                    </div>
+                                    <div class="t__elem elem-summa t__elem__value">
+                                        <div class="elem__title"><p>Комиссия (₽)</p></div>
+                                        <div class="elem__value"><p>{{ bank.commission }}</p></div>
                                     </div>
                                 </div>
-                                <div class="t__elem elem-product t__elem__value">
-                                    <div class="elem__title"><p>Стоимость (₽)</p></div>
-                                    <div class="elem__value"><p>{{ bank.cost }}</p></div>
-                                </div>
-                                <div class="t__elem elem-summa t__elem__value">
-                                    <div class="elem__title"><p>Комиссия (₽)</p></div>
-                                    <div class="elem__value"><p>{{ bank.commission }}</p></div>
-                                </div>
-                            </div>
-                        </label>
+                            </label>
                         {% endfor %}
                         <div class="btn-row">
                             <button type="submit">Далее</button>
@@ -129,6 +130,13 @@
             }
 
         })
+    }
+
+    function toggle(source) {
+        checkboxes = document.getElementsByClassName('input-lg');
+        for (let i = 0, n = checkboxes.length; i < n; i++) {
+            checkboxes[i].checked = source.checked;
+        }
     }
 
 </script>
